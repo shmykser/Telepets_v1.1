@@ -1,10 +1,17 @@
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
-from backend.models import Base
+from models import Base
+from config.settings import DATABASE_URL
 
-DATABASE_URL = "sqlite+aiosqlite:///./telepets.db"  # Для MVP, потом можно заменить на PostgreSQL
+# Используем настройку из settings.py
+# Для SQLite используем асинхронный движок
+if DATABASE_URL.startswith("sqlite://"):
+    # Заменяем sqlite:// на sqlite+aiosqlite:// для асинхронной работы
+    async_database_url = DATABASE_URL.replace("sqlite://", "sqlite+aiosqlite://")
+else:
+    async_database_url = DATABASE_URL
 
-engine = create_async_engine(DATABASE_URL, echo=True, future=True)
+engine = create_async_engine(async_database_url, echo=True, future=True)
 
 AsyncSessionLocal = sessionmaker(
     bind=engine, class_=AsyncSession, expire_on_commit=False

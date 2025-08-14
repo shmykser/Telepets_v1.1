@@ -7,10 +7,11 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import func
-from backend.db import get_db
-from backend.models import Pet, Notification, PetState
-from backend.monitoring import metrics_collector, get_health_status
-from backend.auth import get_current_user
+from db import get_db
+from models import Pet, Notification, PetState
+from monitoring import metrics_collector, get_health_status
+from config.settings import APP_VERSION
+from auth import get_current_user
 import logging
 from datetime import datetime, timedelta
 
@@ -102,7 +103,7 @@ async def get_statistics(db: AsyncSession = Depends(get_db)):
             },
             "system": {
                 "uptime": "running",
-                "version": "1.1.0"
+                "version": APP_VERSION
             }
         }
         

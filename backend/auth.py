@@ -7,8 +7,8 @@ from fastapi import HTTPException, Depends, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
-from backend.db import get_db
-from backend.models import Pet
+from db import get_db
+from models import Pet
 import logging
 from datetime import datetime, timedelta
 import jwt
@@ -16,10 +16,9 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
+from config.settings import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
+
 # Простая система безопасности для MVP
-SECRET_KEY = "telepets-secret-key-2024"  # В продакшене использовать переменную окружения
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 security = HTTPBearer()
 

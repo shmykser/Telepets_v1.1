@@ -1,6 +1,6 @@
 import aiohttp
 import logging
-from backend.config.settings import TELEGRAM_BOT_TOKEN, TELEGRAM_API_URL
+from config.settings import TELEGRAM_BOT_TOKEN, TELEGRAM_API_URL, HTTP_TIMEOUT, HTTP_STATUS_SUCCESS, HEALTH_MAX
 
 logger = logging.getLogger(__name__)
 
@@ -44,9 +44,9 @@ class TelegramClient:
                 async with session.post(
                     f"{self.api_url}/sendMessage",
                     json=payload,
-                    timeout=aiohttp.ClientTimeout(total=10)
+                    timeout=aiohttp.ClientTimeout(total=HTTP_TIMEOUT)
                 ) as response:
-                    if response.status == 200:
+                    if response.status == HTTP_STATUS_SUCCESS:
                         logger.info(f"Сообщение отправлено пользователю {chat_id}")
                         return True
                     else:
@@ -71,10 +71,10 @@ class TelegramClient:
         Returns:
             bool: True если сообщение отправлено успешно
         """
-        message = f"⚠️ <b>Внимание!</b>\n\n"
+        message = f"[!] <b>Внимание!</b>\n\n"
         message += f"Питомец <b>{pet_name}</b> нуждается в помощи!\n"
         message += f"Стадия: <b>{stage}</b>\n"
-        message += f"Здоровье: <b>{health}/100</b>\n\n"
+        message += f"Здоровье: <b>{health}/{HEALTH_MAX}</b>\n\n"
         message += "Срочно помогите своему питомцу!"
         
         return await self.send_message(chat_id, message)
@@ -91,7 +91,7 @@ class TelegramClient:
         Returns:
             bool: True если сообщение отправлено успешно
         """
-        message = f"💀 <b>Питомец умер!</b>\n\n"
+        message = f"[X] <b>Питомец умер!</b>\n\n"
         message += f"К сожалению, <b>{pet_name}</b> умер на стадии <b>{stage}</b>.\n\n"
         message += "Игра окончена. Создайте нового питомца для продолжения!"
         
@@ -110,7 +110,7 @@ class TelegramClient:
         Returns:
             bool: True если сообщение отправлено успешно
         """
-        message = f"🎉 <b>Питомец вырос!</b>\n\n"
+        message = f"[*] <b>Питомец вырос!</b>\n\n"
         message += f"<b>{pet_name}</b> перешел с <b>{old_stage}</b> на <b>{new_stage}</b>!\n\n"
         message += "Поздравляем! Продолжайте заботиться о своем питомце!"
         
