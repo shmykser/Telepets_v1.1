@@ -90,6 +90,9 @@ ACTION_COSTS = {
     'grooming': 20        # Уход за питомцем
 }
 
+# Стоимость платного создания нового питомца, если есть живые питомцы не в состоянии adult
+NEW_PET_PAID_CREATION_COST = 500
+
 # Награды за достижения
 ACHIEVEMENT_REWARDS = {
     'first_pet': 50,          # Первый питомец

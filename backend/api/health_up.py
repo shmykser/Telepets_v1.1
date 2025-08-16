@@ -43,6 +43,7 @@ async def health_up_logic(user_id: str, db: AsyncSession, pet_name: str | None =
     # Увеличиваем здоровье
     old_health = pet.health
     pet.health = min(HEALTH_MAX, pet.health + health_up_amount)
+    # Не трогаем updated_at, чтобы таймер стадий не сбрасывался от лечений
     
     # Получаем сообщение для текущей стадии
     stage_message = STAGE_MESSAGES.get(pet.state.value, {}).get('health_up', 'Здоровье увеличено')

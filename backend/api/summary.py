@@ -229,12 +229,23 @@ async def get_all_pets_summary(user_id: str, db: AsyncSession = Depends(get_db))
                 "adult_en": pet.prompt_adult_en,
             }
 
+            # Рассчитываем таймер перехода стадии для каждого питомца (0 для последней стадии и мёртвых)
+            try:
+                time_to_next_stage = calculate_time_to_next_stage(
+                    pet.state.value,
+                    pet.created_at.replace(tzinfo=None),
+                    pet.updated_at.replace(tzinfo=None) if pet.updated_at else None,
+                ) if pet.state != PetState.dead else 0
+            except Exception:
+                time_to_next_stage = 0
+
             pets_data.append({
                 "id": pet.id,
                 "name": pet.name,
                 "state": pet.state.value,
                 "health": pet.health,
                 "status": status,
+                "time_to_next_stage_seconds": time_to_next_stage,
                 "created_at": pet.created_at.isoformat() + "Z",
                 "updated_at": pet.updated_at.isoformat() + "Z" if pet.updated_at else pet.created_at.isoformat() + "Z",
                 "creature": creature,

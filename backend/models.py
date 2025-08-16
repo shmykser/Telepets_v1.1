@@ -44,7 +44,7 @@ class Pet(Base):
     image_baby_b64 = Column(Text, nullable=True)
     image_adult_b64 = Column(Text, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    updated_at = Column(DateTime(timezone=True), nullable=True)
 
 class Notification(Base):
     __tablename__ = 'notifications'

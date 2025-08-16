@@ -57,6 +57,8 @@ async def decrease_health_task():
                         if pet.health <= HEALTH_MIN:
                             stage_before_death = pet.state.value
                             pet.state = PetState.dead
+                            # фиксируем момент окончания жизненного цикла
+                            pet.updated_at = datetime.utcnow()
                             
                             # Создаем уведомление о смерти
                             death_message = STAGE_MESSAGES.get(stage_before_death, {}).get('death', 'Питомец умер')
@@ -119,6 +121,8 @@ async def decrease_health_task():
                                 old_stage = pet.state.value
                                 new_stage = STAGE_ORDER[current_stage_index + 1]
                                 pet.state = PetState(new_stage)
+                                # фиксируем момент начала новой стадии (для корректного таймера)
+                                pet.updated_at = datetime.utcnow()
                                 # Фиксируем смену стадии сразу, чтобы другие запросы видели актуальное состояние
                                 await db.commit()
                                 
