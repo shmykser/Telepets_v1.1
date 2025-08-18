@@ -11,6 +11,9 @@ class PetState(enum.Enum):
     egg = 'egg'
     baby = 'baby'
     adult = 'adult'
+
+class PetLifeStatus(enum.Enum):
+    alive = 'alive'
     dead = 'dead'
 
 class TransactionType(enum.Enum):
@@ -32,6 +35,7 @@ class Pet(Base):
     user_id = Column(String, index=True, nullable=False)
     name = Column(String, nullable=False)
     state = Column(Enum(PetState), default=PetState.egg, nullable=False)
+    status = Column(Enum(PetLifeStatus), default=PetLifeStatus.alive, nullable=False)
     health = Column(Integer, default=HEALTH_MAX, nullable=False)
     # Полное JSON-описание существа (характеристики), как в cache/*_prompts.json → ключ creature
     creature_json = Column(Text, nullable=True)

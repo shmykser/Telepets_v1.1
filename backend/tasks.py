@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from db import AsyncSessionLocal
-from models import Pet, PetState, Notification
+from models import Pet, PetState, PetLifeStatus, Notification
 from services.stages import StageLifecycleService
 from config.settings import (
     HEALTH_DOWN_INTERVALS, 
@@ -13,7 +13,7 @@ from config.settings import (
     STAGE_MESSAGES,
     TELEGRAM_MESSAGES,
     TASK_SLEEP_INTERVAL,
-    ACHIEVEMENT_CHECK_INTERVALS
+    ACHIEVEMENT_CHECK_INTERVALS,
 )
 from telegram_client import telegram_client
 from economy import EconomyService
@@ -39,7 +39,7 @@ async def decrease_health_task():
             async with AsyncSessionLocal() as db:
                 # Получаем всех живых питомцев
                 result = await db.execute(
-                    select(Pet).where(Pet.state != PetState.dead)
+                    select(Pet).where(Pet.status == PetLifeStatus.alive)
                 )
                 pets = result.scalars().all()
                 
@@ -56,7 +56,7 @@ async def decrease_health_task():
                         # Проверяем смерть питомца
                         if pet.health <= HEALTH_MIN:
                             stage_before_death = pet.state.value
-                            pet.state = PetState.dead
+                            pet.status = PetLifeStatus.dead
                             # фиксируем момент окончания жизненного цикла
                             pet.updated_at = datetime.utcnow()
                             
@@ -111,7 +111,7 @@ async def decrease_health_task():
                         time_since_stage_start = current_time - stage_started_at_naive
                         
                         if (
-                            pet.state != PetState.dead and 
+                            pet.status == PetLifeStatus.alive and 
                             pet.health > HEALTH_MIN and 
                             time_since_stage_start.total_seconds() >= STAGE_TRANSITION_INTERVAL
                         ):
@@ -143,6 +143,8 @@ async def decrease_health_task():
                                     new_stage=new_stage
                                 )
                                 
+                                # Начисление монет за переход стадии удалено по требованиям
+
                                 # Проверяем достижения
                                 await check_pet_achievements(db, pet.user_id, pet)
                                 

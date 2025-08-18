@@ -13,7 +13,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import func
 from db import AsyncSessionLocal
-from models import Pet, Notification, PetState
+from models import Pet, Notification, PetState, PetLifeStatus
 from config.settings import (
     MONITORING_UPDATE_INTERVAL, 
     MONITORING_REQUEST_HISTORY_LIMIT,
@@ -62,13 +62,13 @@ class MetricsCollector:
             
             # Активные питомцы
             result = await db.execute(
-                select(func.count(Pet.id)).where(Pet.state != PetState.dead)
+                select(func.count(Pet.id)).where(Pet.status == PetLifeStatus.alive)
             )
             self.active_pets = result.scalar()
             
             # Мертвые питомцы
             result = await db.execute(
-                select(func.count(Pet.id)).where(Pet.state == PetState.dead)
+                select(func.count(Pet.id)).where(Pet.status == PetLifeStatus.dead)
             )
             self.dead_pets = result.scalar()
             

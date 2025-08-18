@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from db import get_db
-from models import Pet, PetState, User, Wallet
+from models import Pet, PetState, PetLifeStatus, User, Wallet
 import logging
 from datetime import datetime, timedelta
 from config.settings import STAGE_TRANSITION_INTERVAL, STAGE_ORDER, HEALTH_MAX, INITIAL_COINS
@@ -75,8 +75,8 @@ async def get_summary(user_id: str, db: AsyncSession = Depends(get_db)):
             }
         
         # Проверяем, есть ли живые питомцы
-        alive_pets = [pet for pet in pets if pet.state != PetState.dead]
-        dead_pets = [pet for pet in pets if pet.state == PetState.dead]
+        alive_pets = [pet for pet in pets if pet.status == PetLifeStatus.alive]
+        dead_pets = [pet for pet in pets if pet.status == PetLifeStatus.dead]
         
         # Если есть только мертвые питомцы
         if not alive_pets:
@@ -119,7 +119,7 @@ async def get_summary(user_id: str, db: AsyncSession = Depends(get_db)):
         )
         
         # Определяем жизненный статус питомца
-        life_status = "alive" if active_pet.state != PetState.dead else "dead"
+        life_status = active_pet.status.value
         
         # Определяем следующую стадию
         current_index = STAGE_ORDER.index(active_pet.state.value)
@@ -212,8 +212,8 @@ async def get_all_pets_summary(user_id: str, db: AsyncSession = Depends(get_db))
         dead_pets = 0
         
         for pet in pets:
-            status = "alive" if pet.state != PetState.dead else "dead"
-            if pet.state != PetState.dead:
+            status = pet.status.value
+            if pet.status == PetLifeStatus.alive:
                 alive_pets += 1
             else:
                 dead_pets += 1
@@ -235,7 +235,7 @@ async def get_all_pets_summary(user_id: str, db: AsyncSession = Depends(get_db))
                     pet.state.value,
                     pet.created_at.replace(tzinfo=None),
                     pet.updated_at.replace(tzinfo=None) if pet.updated_at else None,
-                ) if pet.state != PetState.dead else 0
+                ) if pet.status == PetLifeStatus.alive else 0
             except Exception:
                 time_to_next_stage = 0
 

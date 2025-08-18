@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import func
 from db import get_db
-from models import Pet, Notification, PetState
+from models import Pet, Notification, PetState, PetLifeStatus
 from monitoring import metrics_collector, get_health_status
 from config.settings import APP_VERSION
 from auth import get_current_user
@@ -47,12 +47,12 @@ async def get_statistics(db: AsyncSession = Depends(get_db)):
         total_pets = total_pets.scalar()
         
         active_pets = await db.execute(
-            select(func.count(Pet.id)).where(Pet.state != PetState.dead)
+            select(func.count(Pet.id)).where(Pet.status == PetLifeStatus.alive)
         )
         active_pets = active_pets.scalar()
         
         dead_pets = await db.execute(
-            select(func.count(Pet.id)).where(Pet.state == PetState.dead)
+            select(func.count(Pet.id)).where(Pet.status == PetLifeStatus.dead)
         )
         dead_pets = dead_pets.scalar()
         
@@ -140,8 +140,8 @@ async def get_user_history(
         
         # Статистика пользователя
         total_pets = len(pets)
-        alive_pets = len([p for p in pets if p.state != PetState.dead])
-        dead_pets = len([p for p in pets if p.state == PetState.dead])
+        alive_pets = len([p for p in pets if p.status == PetLifeStatus.alive])
+        dead_pets = len([p for p in pets if p.status == PetLifeStatus.dead])
         
         # Группировка уведомлений по типам
         notification_stats = {}

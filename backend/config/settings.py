@@ -38,7 +38,7 @@ HEALTH_UP_AMOUNTS = {
 }
 
 # Настройки перехода между стадиями (в секундах)
-STAGE_TRANSITION_INTERVAL = 300  # для всех стадий
+STAGE_TRANSITION_INTERVAL = 30  # для всех стадий
 
 # Порядок стадий развития
 STAGE_ORDER = ['egg', 'baby', 'adult']
@@ -65,6 +65,8 @@ STAGE_MESSAGES = {
     }
 }
 
+# Награды за переход стадии отключены
+
 # Сообщения для Telegram
 TELEGRAM_MESSAGES = {
     'low_health': '⚠️ Внимание! Здоровье питомца низкое!',
@@ -84,14 +86,14 @@ ACTION_COSTS = {
         'baby': 10,    # Кормление детеныша
         'adult': 20    # Развлечение взрослого
     },
+    'resurrect': 200,     # Воскрешение питомца
     'special_food': 25,    # Специальная еда
     'medicine': 30,        # Лекарство
     'toy': 15,            # Игрушка
-    'grooming': 20        # Уход за питомцем
+    'grooming': 20,        # Уход за питомцем
+    'paid_pet': 300,       # Платное создание питомца
 }
 
-# Стоимость платного создания нового питомца, если есть живые питомцы не в состоянии adult
-NEW_PET_PAID_CREATION_COST = 500
 
 # Награды за достижения
 ACHIEVEMENT_REWARDS = {
@@ -113,6 +115,14 @@ ACTION_REWARDS = {
     'referral': 50,          # Приглашение друга
     'achievement': 10        # Получение достижения
 }
+
+# Награды за мини-игры
+GAME_REWARD_ALLOWED_GAMES = ["runner", "puzzle"]
+GAME_REWARD_COINS_PER_SCORE = {
+    "runner": 0.1,  # каждые 10 очков = 1 монета
+    "puzzle": 0.2,  # каждые 5 очков = 1 монета
+}
+GAME_REWARD_MAX_PER_REQUEST = 100
 
 # Лимиты наград
 REWARD_LIMITS = {

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from db import get_db
-from models import Pet, PetState
+from models import Pet, PetState, PetLifeStatus
 from config.settings import HEALTH_MAX, HEALTH_UP_AMOUNTS, STAGE_MESSAGES, HEALTH_MIN
 import logging
 
@@ -18,12 +18,12 @@ async def health_up_logic(user_id: str, db: AsyncSession, pet_name: str | None =
     # Находим питомца пользователя: либо конкретного по имени, либо единственного живого
     if pet_name:
         result = await db.execute(
-            select(Pet).where(Pet.user_id == user_id, Pet.name == pet_name, Pet.state != PetState.dead)
+            select(Pet).where(Pet.user_id == user_id, Pet.name == pet_name, Pet.status == PetLifeStatus.alive)
         )
         pet = result.scalar_one_or_none()
     else:
         result = await db.execute(
-            select(Pet).where(Pet.user_id == user_id, Pet.state != PetState.dead)
+            select(Pet).where(Pet.user_id == user_id, Pet.status == PetLifeStatus.alive)
         )
         pets = result.scalars().all()
         if len(pets) > 1:
@@ -34,7 +34,7 @@ async def health_up_logic(user_id: str, db: AsyncSession, pet_name: str | None =
         raise HTTPException(status_code=404, detail="Питомец не найден или умер")
     
     # Проверяем, не умер ли питомец
-    if pet.health <= HEALTH_MIN:
+    if pet.health <= HEALTH_MIN or pet.status == PetLifeStatus.dead:
         raise HTTPException(status_code=400, detail="Питомец умер и не может быть вылечен")
     
     # Получаем количество увеличения здоровья для текущей стадии

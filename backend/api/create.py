@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from db import get_db
-from models import Pet, PetState
-from config.settings import HEALTH_MAX, NEW_PET_PAID_CREATION_COST
+from models import Pet, PetState, PetLifeStatus
+from config.settings import HEALTH_MAX, ACTION_COSTS
 from economy import EconomyService
 import logging
 from prompt_store import generate_and_store_prompts
@@ -29,7 +29,7 @@ async def create_pet(user_id: str, name: str, override: bool = False, db: AsyncS
 
         # Ищем всех живых питомцев
         result = await db.execute(
-            select(Pet).where(Pet.user_id == user_id, Pet.state != PetState.dead)
+            select(Pet).where(Pet.user_id == user_id, Pet.status == PetLifeStatus.alive)
         )
         alive_pets = result.scalars().all()
 
@@ -49,13 +49,14 @@ async def create_pet(user_id: str, name: str, override: bool = False, db: AsyncS
 
         # Если требуется платное создание — списываем монеты
         if is_paid_creation_required:
+            paid_cost = ACTION_COSTS.get('paid_pet', 500)
             # Проверяем достаточность средств
-            if wallet.coins < NEW_PET_PAID_CREATION_COST:
-                raise HTTPException(status_code=400, detail=f"Недостаточно монет для создания питомца. Требуется: {NEW_PET_PAID_CREATION_COST}, доступно: {wallet.coins}")
+            if wallet.coins < paid_cost:
+                raise HTTPException(status_code=400, detail=f"Недостаточно монет для создания питомца. Требуется: {paid_cost}, доступно: {wallet.coins}")
             spent = await EconomyService.spend_coins(
                 db=db,
                 user_id=user_id,
-                amount=NEW_PET_PAID_CREATION_COST,
+                amount=paid_cost,
                 description=f"Платное создание нового питомца ({name})",
                 transaction_data={"action": "create_pet", "pet_name": name}
             )
@@ -63,7 +64,7 @@ async def create_pet(user_id: str, name: str, override: bool = False, db: AsyncS
                 raise HTTPException(status_code=500, detail="Не удалось списать монеты за создание питомца")
         
         # Создание нового питомца
-        new_pet = Pet(user_id=user_id, name=name, state=PetState.egg, health=HEALTH_MAX)
+        new_pet = Pet(user_id=user_id, name=name, state=PetState.egg, health=HEALTH_MAX, status=PetLifeStatus.alive)
         db.add(new_pet)
         await db.commit()
         await db.refresh(new_pet)
@@ -100,7 +101,7 @@ async def create_pet(user_id: str, name: str, override: bool = False, db: AsyncS
                 "total_spent": wallet.total_spent
             },
             "paid": is_paid_creation_required,
-            "paid_cost": NEW_PET_PAID_CREATION_COST if is_paid_creation_required else 0
+            "paid_cost": paid_cost if is_paid_creation_required else 0
         }
     except HTTPException:
         raise
