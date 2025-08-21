@@ -1,7 +1,8 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from db import AsyncSessionLocal
-from models import Pet, PetState, PetLifeStatus, Notification
+from models import Pet, PetState, PetLifeStatus, Notification, Auction, AuctionStatus
+from services.auction import AuctionService
 from services.stages import StageLifecycleService
 from config.settings import (
     HEALTH_DOWN_INTERVALS, 
@@ -57,6 +58,17 @@ async def decrease_health_task():
                         if pet.health <= HEALTH_MIN:
                             stage_before_death = pet.state.value
                             pet.status = PetLifeStatus.dead
+                            # Отменяем активный аукцион, если он есть на этого питомца
+                            try:
+                                a_res = await db.execute(
+                                    select(Auction).where(Auction.pet_id == pet.id, Auction.status == AuctionStatus.active)
+                                )
+                                a = a_res.scalar_one_or_none()
+                                if a:
+                                    a.status = AuctionStatus.cancelled
+                                    await db.commit()
+                            except Exception:
+                                pass
                             # фиксируем момент окончания жизненного цикла
                             pet.updated_at = datetime.utcnow()
                             
@@ -237,3 +249,27 @@ async def check_pet_achievements(db: AsyncSession, user_id: str, pet: Pet):
 async def start_health_decrease_task():
     """Запускает фоновую задачу уменьшения здоровья"""
     asyncio.create_task(decrease_health_task()) 
+
+async def finalize_auctions_task():
+    """Фоновая задача для финализации завершенных аукционов"""
+    logger.info("Запуск фоновой задачи финализации аукционов")
+    while True:
+        try:
+            async with AsyncSessionLocal() as db:
+                now = datetime.utcnow()
+                result = await db.execute(
+                    select(Auction).where(Auction.status == AuctionStatus.active, Auction.end_time <= now).limit(50)
+                )
+                auctions = result.scalars().all()
+                for a in auctions:
+                    try:
+                        await AuctionService.finalize_single(db, a.id)
+                    except Exception as e:
+                        logger.error(f"Ошибка финализации аукциона {a.id}: {e}")
+        except Exception as e:
+            logger.error(f"Ошибка в фоновой задаче аукционов: {e}")
+        await asyncio.sleep(5)
+
+async def start_auction_finalize_task():
+    """Запускает фоновую задачу финализации аукционов"""
+    asyncio.create_task(finalize_auctions_task())

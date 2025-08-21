@@ -78,6 +78,44 @@ class TelegramClient:
         message += "Срочно помогите своему питомцу!"
         
         return await self.send_message(chat_id, message)
+
+    async def send_auction_outbid(self, chat_id: str, auction_id: int, amount: int) -> bool:
+        message = (
+            f"[Auction] <b>Ваша ставка перебита</b>\n\n"
+            f"Аукцион: <b>#{auction_id}</b>\n"
+            f"Новая текущая цена: <b>{amount}</b> монет"
+        )
+        return await self.send_message(chat_id, message)
+
+    async def send_auction_won(self, chat_id: str, auction_id: int, price: int) -> bool:
+        message = (
+            f"[Auction] <b>Вы выиграли!</b>\n\n"
+            f"Аукцион: <b>#{auction_id}</b>\n"
+            f"Итоговая цена: <b>{price}</b> монет"
+        )
+        return await self.send_message(chat_id, message)
+
+    async def send_pet_sold(self, chat_id: str, auction_id: int, price: int, buyer_name: str = None) -> bool:
+        message = (
+            f"[Auction] <b>Питомец продан</b>\n\n"
+            f"Аукцион: <b>#{auction_id}</b>\n"
+            f"Итоговая цена: <b>{price}</b> монет\n"
+        )
+        
+        if buyer_name:
+            message += f"Покупатель: <b>{buyer_name}</b>"
+        else:
+            message += "Покупатель: <b>Неизвестный игрок</b>"
+        
+        return await self.send_message(chat_id, message)
+
+    async def send_auction_expired(self, chat_id: str, auction_id: int) -> bool:
+        message = (
+            f"[Auction] <b>Аукцион завершён</b>\n\n"
+            f"Аукцион: <b>#{auction_id}</b>\n"
+            f"Ставок не было. Лот не продан."
+        )
+        return await self.send_message(chat_id, message)
     
     async def send_death_notification(self, chat_id: str, pet_name: str, stage: str) -> bool:
         """

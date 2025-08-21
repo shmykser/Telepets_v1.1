@@ -5,7 +5,10 @@ from contextlib import asynccontextmanager
 from db import init_db
 from api import create, health_up, summary, economy
 from api import monitoring, debug, pet_images
-from tasks import start_health_decrease_task
+from api import auth_api
+from api import market
+from api import user_profile
+from tasks import start_health_decrease_task, start_auction_finalize_task
 from monitoring import start_monitoring_task, MonitoringMiddleware
 from config.settings import APP_VERSION, API_HOST, API_PORT
 import asyncio
@@ -34,6 +37,10 @@ async def lifespan(app: FastAPI):
     # Запуск фоновой задачи по уменьшению здоровья
     await start_health_decrease_task()
     logger.info("Фоновая задача здоровья запущена")
+    
+    # Запуск фоновой задачи финализации аукционов
+    await start_auction_finalize_task()
+    logger.info("Фоновая задача аукционов запущена")
     
     # Запуск задачи мониторинга
     asyncio.create_task(start_monitoring_task())
@@ -121,6 +128,9 @@ app.include_router(economy.router)
 app.include_router(monitoring.router)
 app.include_router(debug.router)
 app.include_router(pet_images.router)
+app.include_router(auth_api.router)
+app.include_router(market.router)
+app.include_router(user_profile.router)
 
 # Добавляем мониторинг middleware после всех определений
 app = MonitoringMiddleware(app)

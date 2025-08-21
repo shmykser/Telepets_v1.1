@@ -142,6 +142,27 @@ PURCHASE_OPTIONS = {
     'coins_5000': {'coins': 5000, 'price_usd': 24.99}
 }
 
+# ===== НАСТРОЙКИ РЫНКА/АУКЦИОНОВ =====
+# Фичефлаг рынка
+MARKET_ENABLED = True
+
+# Длительность аукциона и soft-close
+AUCTION_DEFAULT_DURATION_SECONDS = 60 * 60  # 60 минут
+AUCTION_SOFT_CLOSE_SECONDS = 60             # продление при ставке в последние 60 сек
+
+# Минимальный инкремент ставки
+AUCTION_MIN_BID_INCREMENT_PERCENT = 5       # не ниже 5% от текущей цены
+AUCTION_MIN_BID_INCREMENT_ABS = 1           # и не меньше 1 монеты
+
+# Лимиты рынка
+AUCTION_MAX_ACTIVE_PER_USER = 5
+
+# Комиссия маркетплейса (учитывается в нетто-выплате продавцу; отдельная транзакция комиссии не создаётся)
+MARKET_FEE_PERCENT = 5
+
+# Пагинация
+AUCTION_LIST_PAGE_SIZE = 20
+
 # Telegram Stars настройки
 TELEGRAM_STARS = {
     'enabled': True,
@@ -332,3 +353,12 @@ def get_stage_negative_prompt(stage_key: str, include_global: bool = True) -> st
     if base and stage_np:
         return f"{base}, {stage_np}"
     return stage_np or base
+
+# ===== НАСТРОЙКИ АНОНИМНОСТИ =====
+
+# Настройки анонимности пользователей (временно отключено из-за проблем совместимости)
+ANONYMOUS_MODE_ENABLED = False
+MIN_DISPLAY_NAME_LENGTH = 2
+MAX_DISPLAY_NAME_LENGTH = 20
+DEFAULT_ANONYMOUS_MODE = False
+ANONYMOUS_NAME_PLACEHOLDER = "Анонимный игрок"
