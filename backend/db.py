@@ -11,7 +11,18 @@ elif DATABASE_URL.startswith("postgresql://"):
 else:
     async_database_url = DATABASE_URL
 
-engine = create_async_engine(async_database_url, echo=True, future=True)
+# Аргументы подключения (SSL для Render Postgres)
+connect_args: dict = {}
+if async_database_url.startswith("postgresql+asyncpg://"):
+    # Требуем SSL при подключении к Render Postgres
+    connect_args = {"ssl": True}
+
+engine = create_async_engine(
+    async_database_url,
+    echo=True,
+    future=True,
+    connect_args=connect_args,
+)
 
 AsyncSessionLocal = sessionmaker(
     bind=engine, class_=AsyncSession, expire_on_commit=False
