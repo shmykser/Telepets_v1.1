@@ -105,8 +105,19 @@ def run_migrations_online() -> None:
             context.run_migrations()
 
     async def _run_async() -> None:
-        async with connectable.connect() as connection:
-            await connection.run_sync(_do_run_migrations)
+        # Ретраи подключения на случай преходящих обрывов соединения
+        last_error: Exception | None = None
+        for attempt in range(1, 6):
+            try:
+                async with connectable.connect() as connection:
+                    await connection.run_sync(_do_run_migrations)
+                last_error = None
+                break
+            except Exception as exc:  # noqa: BLE001
+                last_error = exc
+                await asyncio.sleep(2 ** attempt)
+        if last_error is not None:
+            raise last_error
 
     asyncio.run(_run_async())
 
