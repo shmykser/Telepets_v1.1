@@ -3,12 +3,11 @@ from __future__ import annotations
 from logging.config import fileConfig
 import os
 import asyncio
+import time
 from sqlalchemy import pool
-from sqlalchemy.ext.asyncio import async_engine_from_config
+from sqlalchemy.engine import engine_from_config
 from sqlalchemy.engine.url import make_url
 from alembic import context
-import ssl
-import certifi
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -38,7 +37,7 @@ target_metadata = Base.metadata
 
 
 def get_url() -> str:
-    # Prefer env var DATABASE_URL, else fallback to settings
+    # Предпочитаем переменную окружения, иначе читаем из настроек
     db_url = os.getenv("DATABASE_URL")
     if not db_url:
         try:
@@ -46,15 +45,17 @@ def get_url() -> str:
             db_url = SETTINGS_DB_URL
         except Exception:
             db_url = "sqlite:///./telepets.db"
-    # Alembic expects sync driver; replace aiosqlite URL for offline config if needed
+    # Alembic должен работать через синхронный драйвер
     if db_url.startswith("sqlite+"):
         db_url = db_url.replace("sqlite+aiosqlite://", "sqlite:///")
-    # Санитизируем query-параметры: asyncpg не поддерживает sslmode
+    if db_url.startswith("postgresql+asyncpg://"):
+        db_url = db_url.replace("postgresql+asyncpg://", "postgresql://", 1)
+    # Стандартизируем query: выставим sslmode=require и уберём прочее
     try:
         url_obj = make_url(db_url)
-        # Полностью очищаем query-параметры, чтобы не передавать несовместимые опции (например, sslmode)
-        if url_obj.query:
-            url_obj = url_obj.set(query={})
+        if url_obj.drivername.startswith("postgresql"):
+            url_obj = url_obj.set(drivername="postgresql")
+            url_obj = url_obj.set(query={"sslmode": "require"})
         return str(url_obj)
     except Exception:
         return db_url
@@ -76,18 +77,20 @@ def run_migrations_offline() -> None:
 def run_migrations_online() -> None:
     configuration = config.get_section(config.config_ini_section) or {}
     sync_url = get_url()
-    async_url = sync_url
-    if sync_url.startswith("postgresql://"):
-        async_url = sync_url.replace("postgresql://", "postgresql+asyncpg://", 1)
-    configuration["sqlalchemy.url"] = async_url
+    configuration["sqlalchemy.url"] = sync_url
 
     connect_args = {}
-    if async_url.startswith("postgresql+asyncpg://"):
-        # SSL контекст с CA certs
-        ssl_context = ssl.create_default_context(cafile=certifi.where())
-        connect_args = {"ssl": ssl_context}
+    if sync_url.startswith("postgresql://"):
+        # Параметры надёжности соединения для psycopg2
+        connect_args = {
+            "sslmode": "require",
+            "keepalives": 1,
+            "keepalives_idle": 5,
+            "keepalives_interval": 5,
+            "keepalives_count": 5,
+        }
 
-    connectable = async_engine_from_config(
+    connectable = engine_from_config(
         configuration,
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
@@ -104,22 +107,19 @@ def run_migrations_online() -> None:
         with context.begin_transaction():
             context.run_migrations()
 
-    async def _run_async() -> None:
-        # Ретраи подключения на случай преходящих обрывов соединения
-        last_error: Exception | None = None
-        for attempt in range(1, 6):
-            try:
-                async with connectable.connect() as connection:
-                    await connection.run_sync(_do_run_migrations)
-                last_error = None
-                break
-            except Exception as exc:  # noqa: BLE001
-                last_error = exc
-                await asyncio.sleep(2 ** attempt)
-        if last_error is not None:
-            raise last_error
-
-    asyncio.run(_run_async())
+    # Ретраи подключения (синхронные)
+    last_error: Exception | None = None
+    for attempt in range(1, 6):
+        try:
+            with connectable.connect() as connection:
+                _do_run_migrations(connection)
+            last_error = None
+            break
+        except Exception as exc:  # noqa: BLE001
+            last_error = exc
+            time.sleep(2 ** attempt)
+    if last_error is not None:
+        raise last_error
 
 
 if context.is_offline_mode():
