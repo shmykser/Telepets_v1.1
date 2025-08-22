@@ -1,0 +1,23 @@
+{
+  "config": {
+    "pet_type": "rabbit",
+    "style": "watercolor",
+    "stage": "baby",
+    "health": 97,
+    "unique_features": [
+      "уши",
+      "большие глаза",
+      "полоски"
+    ],
+    "color_scheme": "excellent",
+    "accessories": [],
+    "mood": "happy",
+    "background": "мягкий градиентный фон"
+  },
+  "generation_info": {
+    "method": "svg_generation",
+    "user_id": "273065571",
+    "pet_name": "Aqa",
+    "timestamp": 90902.312
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Azd",
+  "creature": {
+    "habitat": "Космическое",
+    "type": "Кристаллическое",
+    "size": "Микроскопическое",
+    "surface": "Энергетическая оболочка",
+    "form_rules": "Допустимы любые формы тела",
+    "head_description": "Одна пара круглых глаз, круглый рот с присосками, бивни",
+    "body_features": [
+      "Кристаллические выросты",
+      "Гибкий позвоночник",
+      "Хвост с множественными отростками",
+      "Энергетическая подпитка",
+      "Космическая навигация"
+    ],
+    "special_abilities": [
+      "Регенерация"
+    ],
+    "coloration": [
+      "Радужный",
+      "Прозрачный"
+    ],
+    "behavior_traits": [
+      "Мирный травоядный"
+    ],
+    "environmental_adaptations": [
+      "Независимость от кислорода",
+      "Радиационная устойчивость",
+      "Энергетическая подпитка",
+      "Космическая навигация"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'кристаллическое' из среды 'Космическое'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: космическая среда с частицами и звёздами.",
+      "en": "A egg of a crystalline from cosmic environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. cosmic environment with particles and stars, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'кристаллическое' из среды 'Космическое'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: одна пара круглых глаз, круглый рот с присосками, бивни. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: энергетическая оболочка, окраска: радужный, характерный признак головы: бивни. Фон: космическая среда с частицами и звёздами.",
+      "en": "A hatchling crystalline from cosmic. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: one pair of round eyes, round mouth with suckers, tusks. Body: soft, stubby limbs. Continuity: surface: energy shell, coloration: rainbow, signature head trait: tusks. cosmic environment with particles and stars, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение кристаллическое из среды 'Космическое'. Размер: микроскопическое (Очень медленное, Минимальная). Покрытие: энергетическая оболочка. Форма тела: допустимы любые формы тела. Голова: одна пара круглых глаз, круглый рот с присосками, бивни. Тело: кристаллические выросты, гибкий позвоночник, хвост с множественными отростками, энергетическая подпитка, космическая навигация. Способности: регенерация. Окраска: радужный, прозрачный. Поведение: мирный травоядный. Адаптации: независимость от кислорода, радиационная устойчивость, энергетическая подпитка, космическая навигация.  Сквозные признаки вида: покровы: энергетическая оболочка, окраска: радужный, характерный признак головы: бивни. ",
+      "en": "A detailed crystalline from cosmic environment. Size: microscopic. Surface: energy shell. Head: one pair of round eyes, round mouth with suckers, tusks. Body: crystalline appendages, flexible spine, tail with multiple appendages, energy feeding, cosmic navigation. Abilities: regeneration. Coloration: rainbow, transparent. Behavior: peaceful herbivore. Adaptations: oxygen independence, radiation resistance, energy feeding, cosmic navigation. cosmic environment with particles and stars, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

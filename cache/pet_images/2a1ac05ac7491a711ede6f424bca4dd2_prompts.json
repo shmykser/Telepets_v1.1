@@ -1,0 +1,57 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Dewfe",
+  "creature": {
+    "habitat": "Космическое",
+    "type": "Фэнтези",
+    "size": "Огромное",
+    "surface": "Кристаллы",
+    "form_rules": "Допустимы любые формы тела",
+    "head_description": "Сложные фасеточные глаза, многочисленные щупальца вокруг рта, бивни",
+    "body_features": [
+      "Энергетические конечности",
+      "Прозрачные участки",
+      "Хвост-плавник",
+      "Радиационная устойчивость",
+      "Космическая навигация"
+    ],
+    "special_abilities": [
+      "Телепортация",
+      "Боковое передвижение",
+      "Ледяные кристаллы"
+    ],
+    "coloration": [
+      "Биолюминесцентный",
+      "Энергетическое свечение"
+    ],
+    "behavior_traits": [
+      "Одиночка",
+      "Осторожный",
+      "Интеллектуальный",
+      "Любопытный"
+    ],
+    "environmental_adaptations": [
+      "Независимость от кислорода",
+      "Радиационная устойчивость",
+      "Энергетическая подпитка",
+      "Космическая навигация"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'фэнтези' из среды 'Космическое'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: космическая среда с частицами и звёздами.",
+      "en": "A egg of a fantasy hybrid from cosmic environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. cosmic environment with particles and stars, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'фэнтези' из среды 'Космическое'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: сложные фасеточные глаза, многочисленные щупальца вокруг рта, бивни. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: кристаллы, окраска: биолюминесцентный, характерный признак головы: бивни. Фон: космическая среда с частицами и звёздами.",
+      "en": "A hatchling fantasy hybrid from cosmic. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: complex compound eyes, numerous tentacles around mouth, tusks. Body: soft, stubby limbs. Continuity: surface: crystal, coloration: bioluminescent, signature head trait: tusks. cosmic environment with particles and stars, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение фэнтези из среды 'Космическое'. Размер: огромное (Очень медленное, Очень сильная). Покрытие: кристаллы. Форма тела: допустимы любые формы тела. Голова: сложные фасеточные глаза, многочисленные щупальца вокруг рта, бивни. Тело: энергетические конечности, прозрачные участки, хвост-плавник, радиационная устойчивость, космическая навигация. Способности: телепортация, боковое передвижение, ледяные кристаллы. Окраска: биолюминесцентный, энергетическое свечение. Поведение: одиночка, осторожный, интеллектуальный, любопытный. Адаптации: независимость от кислорода, радиационная устойчивость, энергетическая подпитка, космическая навигация.  Сквозные признаки вида: покровы: кристаллы, окраска: биолюминесцентный, характерный признак головы: бивни. ",
+      "en": "A detailed fantasy hybrid from cosmic environment. Size: huge. Surface: crystal. Head: complex compound eyes, numerous tentacles around mouth, tusks. Body: energy limbs, transparent areas, fin-like tail, radiation resistance, cosmic navigation. Abilities: teleportation, sideways movement, ice crystals. Coloration: bioluminescent, Энергетическое свечение. Behavior: solitary, cautious, intelligent, curious. Adaptations: oxygen independence, radiation resistance, energy feeding, cosmic navigation. cosmic environment with particles and stars, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "user_id": "273065571",
+  "pet_name": "gerw",
+  "creature": {
+    "habitat": "Болотное",
+    "type": "Амфибия",
+    "size": "Микроскопическое",
+    "surface": "Водонепроницаемая чешуя",
+    "form_rules": "Адаптация к влажной среде",
+    "head_description": "Большие светящиеся глаза, челюсти с множественными рядами зубов, бивни",
+    "body_features": [
+      "Четыре конечности с когтями",
+      "Множественные сердца",
+      "Энергетический хвост"
+    ],
+    "special_abilities": [
+      "Регенерация"
+    ],
+    "coloration": [
+      "Песочный",
+      "Биолюминесцентные пятна"
+    ],
+    "behavior_traits": [
+      "Ночной образ жизни"
+    ],
+    "environmental_adaptations": []
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'амфибия' из среды 'Болотное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: болотная среда с туманом.",
+      "en": "A egg of a amphibian from swamp environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. swampy environment with mist, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'амфибия' из среды 'Болотное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: большие светящиеся глаза, челюсти с множественными рядами зубов, бивни. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: водонепроницаемая чешуя, окраска: песочный, характерный признак головы: бивни. Фон: болотная среда с туманом.",
+      "en": "A hatchling amphibian from swamp. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: large glowing eyes, jaws with multiple rows of teeth, tusks. Body: soft, stubby limbs. Continuity: surface: waterproof scales, coloration: sand, signature head trait: tusks. swampy environment with mist, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение амфибия из среды 'Болотное'. Размер: микроскопическое (Очень медленное, Минимальная). Покрытие: водонепроницаемая чешуя. Форма тела: адаптация к влажной среде. Голова: большие светящиеся глаза, челюсти с множественными рядами зубов, бивни. Тело: четыре конечности с когтями, множественные сердца, энергетический хвост. Способности: регенерация. Окраска: песочный, биолюминесцентные пятна. Поведение: ночной образ жизни.  Сквозные признаки вида: покровы: водонепроницаемая чешуя, окраска: песочный, характерный признак головы: бивни. ",
+      "en": "A detailed amphibian from swamp environment. Size: microscopic. Surface: waterproof scales. Head: large glowing eyes, jaws with multiple rows of teeth, tusks. Body: four limbs with claws, multiple hearts, energy tail. Abilities: regeneration. Coloration: sand, Биолюминесцентные пятна. Behavior: nocturnal. swampy environment with mist, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

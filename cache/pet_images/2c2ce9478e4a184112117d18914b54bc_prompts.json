@@ -1,0 +1,45 @@
+{
+  "user_id": "test_user_1",
+  "pet_name": "asf",
+  "creature": {
+    "habitat": "Болотное",
+    "type": "Фэнтези",
+    "size": "Крошечное",
+    "surface": "Слизь",
+    "form_rules": "Адаптация к влажной среде",
+    "head_description": "Множество маленьких глаз, многочисленные щупальца вокруг рта, кристаллические выросты",
+    "body_features": [
+      "Крылья и две ноги",
+      "Биолюминесцентные полосы"
+    ],
+    "special_abilities": [
+      "Сворачивание в клубок"
+    ],
+    "coloration": [
+      "Серебряный",
+      "Энергетическое свечение"
+    ],
+    "behavior_traits": [
+      "Ночной образ жизни",
+      "Любопытный"
+    ],
+    "environmental_adaptations": []
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'фэнтези' из среды 'Болотное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: болотная среда с туманом.",
+      "en": "A egg of a fantasy hybrid from swamp environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. swampy environment with mist, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'фэнтези' из среды 'Болотное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: множество маленьких глаз, многочисленные щупальца вокруг рта, кристаллические выросты. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: слизь, окраска: серебряный, характерный признак головы: кристаллические выросты. Фон: болотная среда с туманом.",
+      "en": "A hatchling fantasy hybrid from swamp. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: multiple small eyes, numerous tentacles around mouth, crystalline growths. Body: soft, stubby limbs. Continuity: surface: mucus, coloration: silver, signature head trait: crystalline growths. swampy environment with mist, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение фэнтези из среды 'Болотное'. Размер: крошечное (Быстрое, Слабая). Покрытие: слизь. Форма тела: адаптация к влажной среде. Голова: множество маленьких глаз, многочисленные щупальца вокруг рта, кристаллические выросты. Тело: крылья и две ноги, биолюминесцентные полосы. Способности: сворачивание в клубок. Окраска: серебряный, энергетическое свечение. Поведение: ночной образ жизни, любопытный.  Сквозные признаки вида: покровы: слизь, окраска: серебряный, характерный признак головы: кристаллические выросты. ",
+      "en": "A detailed fantasy hybrid from swamp environment. Size: tiny. Surface: mucus. Head: multiple small eyes, numerous tentacles around mouth, crystalline growths. Body: wings and two legs, bioluminescent stripes. Abilities: curling into a ball. Coloration: silver, Энергетическое свечение. Behavior: nocturnal, curious. swampy environment with mist, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

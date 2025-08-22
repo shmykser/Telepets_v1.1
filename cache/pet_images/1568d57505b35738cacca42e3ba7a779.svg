@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="background" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f8ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e6f3ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Фон -->
+  <rect width="100%" height="100%" fill="url(#background)" rx="10"/>
+  
+  <!-- Питомец (эмодзи) -->
+  <text x="50%" y="50%" text-anchor="middle" dy="0.35em" 
+        font-size="72" font-family="Arial, sans-serif"
+        filter="url(#glow)">
+    🐰
+  </text>
+  
+  <!-- Индикатор здоровья -->
+  <rect x="10%" y="85%" width="80%" height="8%" rx="4" 
+        fill="#ddd" stroke="#999" stroke-width="1"/>
+  <rect x="10%" y="85%" width="74%" height="8%" rx="4" 
+        fill="#8BC34A" stroke="#999" stroke-width="1"/>
+  
+  <!-- Особенности -->
+  
+  <path d="M 30 20 L 35 5 L 40 20" 
+        fill="none" stroke="#8B4513" stroke-width="3"/>
+  <path d="M 40 20 L 45 5 L 50 20" 
+        fill="none" stroke="#8B4513" stroke-width="3"/>
+</svg>

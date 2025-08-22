@@ -1,0 +1,23 @@
+{
+  "config": {
+    "pet_type": "rabbit",
+    "style": "watercolor",
+    "stage": "adult",
+    "health": 83,
+    "unique_features": [
+      "блестящая шерсть",
+      "маленький нос",
+      "рога"
+    ],
+    "color_scheme": "excellent",
+    "accessories": [],
+    "mood": "happy",
+    "background": "мягкий градиентный фон"
+  },
+  "generation_info": {
+    "method": "svg_generation",
+    "user_id": "273065571",
+    "pet_name": "Zaxc",
+    "timestamp": 1440.0
+  }
+}

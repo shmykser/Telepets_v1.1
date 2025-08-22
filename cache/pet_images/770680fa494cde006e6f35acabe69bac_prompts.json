@@ -1,0 +1,49 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Spun",
+  "creature": {
+    "habitat": "Вулканическое",
+    "type": "Элементальное",
+    "size": "Большое",
+    "surface": "Огнеупорная чешуя",
+    "form_rules": "Устойчивость к высоким температурам",
+    "head_description": "Одна пара круглых глаз, клюв с острыми краями, биолюминесцентные органы",
+    "body_features": [
+      "Плавники и хвост",
+      "Множественные сердца",
+      "Пушистый хвост"
+    ],
+    "special_abilities": [
+      "Кислотные выделения",
+      "Ледяные кристаллы",
+      "Ползание по стенам"
+    ],
+    "coloration": [
+      "Желтый",
+      "Желтый"
+    ],
+    "behavior_traits": [
+      "Мирный травоядный",
+      "Осторожный",
+      "Ночной образ жизни"
+    ],
+    "environmental_adaptations": []
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'элементальное' из среды 'Вулканическое'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: вулканическая среда с раскалёнными породами.",
+      "en": "A egg of a elemental from volcanic environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. volcanic environment with glowing rocks, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'элементальное' из среды 'Вулканическое'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: одна пара круглых глаз, клюв с острыми краями, биолюминесцентные органы. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: огнеупорная чешуя, окраска: желтый, характерный признак головы: биолюминесцентные органы. Фон: вулканическая среда с раскалёнными породами.",
+      "en": "A hatchling elemental from volcanic. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: one pair of round eyes, sharp beak, bioluminescent organs. Body: soft, stubby limbs. Continuity: surface: fireproof scales, coloration: yellow, signature head trait: bioluminescent organs. volcanic environment with glowing rocks, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение элементальное из среды 'Вулканическое'. Размер: большое (Медленное, Сильная). Покрытие: огнеупорная чешуя. Форма тела: устойчивость к высоким температурам. Голова: одна пара круглых глаз, клюв с острыми краями, биолюминесцентные органы. Тело: плавники и хвост, множественные сердца, пушистый хвост. Способности: кислотные выделения, ледяные кристаллы, ползание по стенам. Окраска: желтый, желтый. Поведение: мирный травоядный, осторожный, ночной образ жизни.  Сквозные признаки вида: покровы: огнеупорная чешуя, окраска: желтый, характерный признак головы: биолюминесцентные органы. ",
+      "en": "A detailed elemental from volcanic environment. Size: large. Surface: fireproof scales. Head: one pair of round eyes, sharp beak, bioluminescent organs. Body: fins and tail, multiple hearts, fluffy tail. Abilities: acid secretions, ice crystals, wall crawling. Coloration: yellow, yellow. Behavior: peaceful herbivore, cautious, nocturnal. volcanic environment with glowing rocks, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

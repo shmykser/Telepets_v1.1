@@ -1,0 +1,52 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Rust",
+  "creature": {
+    "habitat": "Горное",
+    "type": "Млекопитающее",
+    "size": "Крошечное",
+    "surface": "Перья",
+    "form_rules": "Любая форма, кроме плавников",
+    "head_description": "Большие светящиеся глаза, мягкие губы, длинные усы",
+    "body_features": [
+      "Четыре конечности с втяжными когтями",
+      "Множественные сердца",
+      "Эффективная терморегуляция",
+      "Эффективные конечности для передвижения"
+    ],
+    "special_abilities": [
+      "Клонирование"
+    ],
+    "coloration": [
+      "Золотой",
+      "Платиновый"
+    ],
+    "behavior_traits": [
+      "Стадное поведение",
+      "Дневной образ жизни"
+    ],
+    "environmental_adaptations": [
+      "Эффективная терморегуляция",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'млекопитающее' из среды 'Горное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: горная местность.",
+      "en": "A egg of a mammal from mountain environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. mountain environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'млекопитающее' из среды 'Горное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: большие светящиеся глаза, мягкие губы, длинные усы. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: перья, окраска: золотой, характерный признак головы: длинные усы. Фон: горная местность.",
+      "en": "A hatchling mammal from mountain. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: large glowing eyes, soft lips, long whiskers. Body: soft, stubby limbs. Continuity: surface: feathers, coloration: golden, signature head trait: long whiskers. mountain environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение млекопитающее из среды 'Горное'. Размер: крошечное (Быстрое, Слабая). Покрытие: перья. Форма тела: любая форма, кроме плавников. Голова: большие светящиеся глаза, мягкие губы, длинные усы. Тело: четыре конечности с втяжными когтями, множественные сердца, эффективная терморегуляция, эффективные конечности для передвижения. Способности: клонирование. Окраска: золотой, платиновый. Поведение: стадное поведение, дневной образ жизни. Адаптации: эффективная терморегуляция, развитые органы чувств, адаптация к различным ландшафтам, эффективные конечности для передвижения.  Сквозные признаки вида: покровы: перья, окраска: золотой, характерный признак головы: длинные усы. ",
+      "en": "A detailed mammal from mountain environment. Size: tiny. Surface: feathers. Head: large glowing eyes, soft lips, long whiskers. Body: four limbs with retractable claws, multiple hearts, efficient thermoregulation, efficient limbs for movement. Abilities: cloning. Coloration: golden, platinum. Behavior: herd behavior, diurnal. Adaptations: efficient thermoregulation, developed sensory organs, adaptation to various landscapes, efficient limbs for movement. mountain environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

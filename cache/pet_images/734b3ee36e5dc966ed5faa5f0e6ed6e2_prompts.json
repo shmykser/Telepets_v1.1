@@ -1,0 +1,54 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Sder",
+  "creature": {
+    "habitat": "Тропический лес",
+    "type": "Млекопитающее",
+    "size": "Маленькое",
+    "surface": "Кожа",
+    "form_rules": "Любая форма, кроме плавников",
+    "head_description": "Множество маленьких глаз, мягкие губы, бивни",
+    "body_features": [
+      "Щупальца с присосками",
+      "Бронированная грудь",
+      "Кристаллический хвост",
+      "Эффективные конечности для передвижения",
+      "Эффективная терморегуляция"
+    ],
+    "special_abilities": [
+      "Бесшумный полет",
+      "Копание"
+    ],
+    "coloration": [
+      "Биолюминесцентный",
+      "Биолюминесцентный"
+    ],
+    "behavior_traits": [
+      "Пугливый",
+      "Скрытный"
+    ],
+    "environmental_adaptations": [
+      "Эффективная терморегуляция",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'млекопитающее' из среды 'Тропический лес'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: тропический лес.",
+      "en": "A egg of a mammal from tropical forest environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'млекопитающее' из среды 'Тропический лес'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: множество маленьких глаз, мягкие губы, бивни. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: кожа, окраска: биолюминесцентный, характерный признак головы: бивни. Фон: тропический лес.",
+      "en": "A hatchling mammal from tropical forest. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: multiple small eyes, soft lips, tusks. Body: soft, stubby limbs. Continuity: surface: skin, coloration: bioluminescent, signature head trait: tusks. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение млекопитающее из среды 'Тропический лес'. Размер: маленькое (Очень быстрое, Умеренная). Покрытие: кожа. Форма тела: любая форма, кроме плавников. Голова: множество маленьких глаз, мягкие губы, бивни. Тело: щупальца с присосками, бронированная грудь, кристаллический хвост, эффективные конечности для передвижения, эффективная терморегуляция. Способности: бесшумный полет, копание. Окраска: биолюминесцентный, биолюминесцентный. Поведение: пугливый, скрытный. Адаптации: эффективная терморегуляция, развитые органы чувств, адаптация к различным ландшафтам, эффективные конечности для передвижения.  Сквозные признаки вида: покровы: кожа, окраска: биолюминесцентный, характерный признак головы: бивни. ",
+      "en": "A detailed mammal from tropical forest environment. Size: small. Surface: skin. Head: multiple small eyes, soft lips, tusks. Body: tentacles with suckers, armored chest, crystalline tail, efficient limbs for movement, efficient thermoregulation. Abilities: silent flight, digging. Coloration: bioluminescent, bioluminescent. Behavior: skittish, stealthy. Adaptations: efficient thermoregulation, developed sensory organs, adaptation to various landscapes, efficient limbs for movement. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

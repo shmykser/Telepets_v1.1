@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Telepets - современный тамагочи для Telegram Web App" />
+    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Telepets" />
+    
+    <!-- Убираем Google Fonts и используем системные шрифты -->
+    <style>
+      /* Fallback шрифты для предотвращения зависания */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Inter'), local('Segoe UI'), local('Arial'), local('sans-serif');
+      }
+      
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: local('Inter Medium'), local('Segoe UI Semibold'), local('Arial'), local('sans-serif');
+      }
+      
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('Inter SemiBold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+      }
+      
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local('Inter Bold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+      }
+      
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: local('Poppins'), local('Segoe UI'), local('Arial'), local('sans-serif');
+      }
+      
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: local('Poppins Medium'), local('Segoe UI Semibold'), local('Arial'), local('sans-serif');
+      }
+      
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: local('Poppins SemiBold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+      }
+      
+      @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: local('Poppins Bold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+      }
+    </style>
+    
+    <script src="https://telegram.org/js/telegram-web-app.js?57"></script>
+    <title>Telepets - Тамагочи</title>
+    <script>
+      // Инициализация Telegram WebApp (если доступно)
+      (function(){
+        try {
+          if (window.Telegram && window.Telegram.WebApp) {
+            const tg = window.Telegram.WebApp;
+            tg.expand();
+            // Безопасные вызовы с проверкой версии API
+            try {
+              if (typeof tg.isVersionAtLeast === 'function' && typeof tg.setHeaderColor === 'function' && tg.isVersionAtLeast('6.1')) {
+                tg.setHeaderColor('#0b1220');
+              }
+            } catch {}
+            try {
+              if (typeof tg.isVersionAtLeast === 'function' && typeof tg.setBackgroundColor === 'function' && tg.isVersionAtLeast('6.2')) {
+                tg.setBackgroundColor('#0b1220');
+              }
+            } catch {}
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html> 

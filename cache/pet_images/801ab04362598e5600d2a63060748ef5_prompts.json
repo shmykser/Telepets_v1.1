@@ -1,0 +1,48 @@
+{
+  "user_id": "273065571",
+  "pet_name": "hrt",
+  "creature": {
+    "habitat": "Пустынное",
+    "type": "Рептилия",
+    "size": "Среднее",
+    "surface": "Песчаная кожа",
+    "form_rules": "Адаптация к засухе",
+    "head_description": "Одна пара круглых глаз, круглый рот с присосками, кристаллические выросты",
+    "body_features": [
+      "Шесть конечностей как у насекомого",
+      "Гибкий позвоночник",
+      "Хвост-плавник"
+    ],
+    "special_abilities": [
+      "Электрические разряды",
+      "Плавание"
+    ],
+    "coloration": [
+      "Песочный",
+      "Переливающиеся чешуйки"
+    ],
+    "behavior_traits": [
+      "Игривый",
+      "Мирный травоядный",
+      "Интеллектуальный"
+    ],
+    "environmental_adaptations": []
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'рептилия' из среды 'Пустынное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: песчаная пустынная среда.",
+      "en": "A egg of a reptile from desert environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. sandy desert environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'рептилия' из среды 'Пустынное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: одна пара круглых глаз, круглый рот с присосками, кристаллические выросты. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: песчаная кожа, окраска: песочный, характерный признак головы: кристаллические выросты. Фон: песчаная пустынная среда.",
+      "en": "A hatchling reptile from desert. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: one pair of round eyes, round mouth with suckers, crystalline growths. Body: soft, stubby limbs. Continuity: surface: песчаная кожа, coloration: sand, signature head trait: crystalline growths. sandy desert environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение рептилия из среды 'Пустынное'. Размер: среднее (Среднее, Средняя). Покрытие: песчаная кожа. Форма тела: адаптация к засухе. Голова: одна пара круглых глаз, круглый рот с присосками, кристаллические выросты. Тело: шесть конечностей как у насекомого, гибкий позвоночник, хвост-плавник. Способности: электрические разряды, плавание. Окраска: песочный, переливающиеся чешуйки. Поведение: игривый, мирный травоядный, интеллектуальный.  Сквозные признаки вида: покровы: песчаная кожа, окраска: песочный, характерный признак головы: кристаллические выросты. ",
+      "en": "A detailed reptile from desert environment. Size: medium. Surface: песчаная кожа. Head: one pair of round eyes, round mouth with suckers, crystalline growths. Body: six insect-like limbs, flexible spine, fin-like tail. Abilities: electric discharges, swimming. Coloration: sand, iridescent scales. Behavior: playful, peaceful herbivore, intelligent. sandy desert environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

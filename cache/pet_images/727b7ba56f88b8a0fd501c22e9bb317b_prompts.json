@@ -1,0 +1,49 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Swefewr",
+  "creature": {
+    "habitat": "Пустынное",
+    "type": "Насекомое",
+    "size": "Колоссальное",
+    "surface": "Водоудерживающая кожа",
+    "form_rules": "Адаптация к засухе",
+    "head_description": "Три глаза треугольником, грызущие резцы, энергетические коронки",
+    "body_features": [
+      "Длинные сильные ноги",
+      "Множественные сердца"
+    ],
+    "special_abilities": [
+      "Камуфляж",
+      "Боковое передвижение",
+      "Огненное дыхание",
+      "Бесшумный полет"
+    ],
+    "coloration": [
+      "Лесной"
+    ],
+    "behavior_traits": [
+      "Пугливый",
+      "Стадное поведение",
+      "Серьезный",
+      "Мирный травоядный"
+    ],
+    "environmental_adaptations": []
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'насекомое' из среды 'Пустынное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: песчаная пустынная среда.",
+      "en": "A egg of a insect from desert environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. sandy desert environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'насекомое' из среды 'Пустынное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: три глаза треугольником, грызущие резцы, энергетические коронки. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: водоудерживающая кожа, окраска: лесной, характерный признак головы: энергетические коронки. Фон: песчаная пустынная среда.",
+      "en": "A hatchling insect from desert. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: three eyes in triangle, gnawing incisors, energy crowns. Body: soft, stubby limbs. Continuity: surface: water-retaining skin, coloration: forest, signature head trait: energy crowns. sandy desert environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение насекомое из среды 'Пустынное'. Размер: колоссальное (Крайне медленное, Колоссальная). Покрытие: водоудерживающая кожа. Форма тела: адаптация к засухе. Голова: три глаза треугольником, грызущие резцы, энергетические коронки. Тело: длинные сильные ноги, множественные сердца. Способности: камуфляж, боковое передвижение, огненное дыхание, бесшумный полет. Окраска: лесной. Поведение: пугливый, стадное поведение, серьезный, мирный травоядный.  Сквозные признаки вида: покровы: водоудерживающая кожа, окраска: лесной, характерный признак головы: энергетические коронки. ",
+      "en": "A detailed insect from desert environment. Size: colossal. Surface: water-retaining skin. Head: three eyes in triangle, gnawing incisors, energy crowns. Body: long powerful legs, multiple hearts. Abilities: camouflage, sideways movement, fire breath, silent flight. Coloration: forest. Behavior: skittish, herd behavior, serious, peaceful herbivore. sandy desert environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

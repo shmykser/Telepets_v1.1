@@ -1,0 +1,56 @@
+{
+  "user_id": "273065571",
+  "pet_name": "bfesb",
+  "creature": {
+    "habitat": "Подземное",
+    "type": "Насекомое",
+    "size": "Большое",
+    "surface": "Твердая чешуя",
+    "form_rules": "Без крыльев, предпочтительно панцирь",
+    "head_description": "Большие светящиеся глаза, ротовой аппарат с хелицерами, грива",
+    "body_features": [
+      "Длинные сильные ноги",
+      "Сегментированное тело",
+      "Кристаллический хвост",
+      "Сниженное зрение",
+      "Развитое обоняние"
+    ],
+    "special_abilities": [
+      "Полет",
+      "Быстрое бегание",
+      "Сворачивание в клубок"
+    ],
+    "coloration": [
+      "Снежный",
+      "Снежный"
+    ],
+    "behavior_traits": [
+      "Стадное поведение",
+      "Социальное существо",
+      "Территориальный"
+    ],
+    "environmental_adaptations": [
+      "Копательные конечности",
+      "Развитое обоняние",
+      "Сниженное зрение",
+      "Адаптация к темноте"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'насекомое' из среды 'Подземное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: подземная среда в мягком свете.",
+      "en": "A egg of a insect from underground environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. underground environment with soft light, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'насекомое' из среды 'Подземное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: большие светящиеся глаза, ротовой аппарат с хелицерами, грива. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: твердая чешуя, окраска: снежный, характерный признак головы: грива. Фон: подземная среда в мягком свете.",
+      "en": "A hatchling insect from underground. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: large glowing eyes, mouth with chelicerae, mane. Body: soft, stubby limbs. Continuity: surface: hard scales, coloration: snow, signature head trait: mane. underground environment with soft light, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение насекомое из среды 'Подземное'. Размер: большое (Медленное, Сильная). Покрытие: твердая чешуя. Форма тела: без крыльев, предпочтительно панцирь. Голова: большие светящиеся глаза, ротовой аппарат с хелицерами, грива. Тело: длинные сильные ноги, сегментированное тело, кристаллический хвост, сниженное зрение, развитое обоняние. Способности: полет, быстрое бегание, сворачивание в клубок. Окраска: снежный, снежный. Поведение: стадное поведение, социальное существо, территориальный. Адаптации: копательные конечности, развитое обоняние, сниженное зрение, адаптация к темноте.  Сквозные признаки вида: покровы: твердая чешуя, окраска: снежный, характерный признак головы: грива. ",
+      "en": "A detailed insect from underground environment. Size: large. Surface: hard scales. Head: large glowing eyes, mouth with chelicerae, mane. Body: long powerful legs, segmented body, crystalline tail, reduced vision, developed sense of smell. Abilities: flight, fast running, curling into a ball. Coloration: snow, snow. Behavior: herd behavior, social creature, territorial. Adaptations: digging limbs, developed sense of smell, reduced vision, adaptation to darkness. underground environment with soft light, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

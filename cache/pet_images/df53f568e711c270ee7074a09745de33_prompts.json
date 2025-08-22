@@ -1,0 +1,53 @@
+{
+  "user_id": "273065571",
+  "pet_name": "s",
+  "creature": {
+    "habitat": "Амфибия",
+    "type": "Амфибия",
+    "size": "Среднее",
+    "surface": "Слизь",
+    "form_rules": "Без крыльев, с плавательными конечностями",
+    "head_description": "Глаза с вертикальными зрачками, круглый рот с присосками, длинные уши",
+    "body_features": [
+      "Плавники и хвост",
+      "Гибкий позвоночник",
+      "Перепонки",
+      "Влажная кожа"
+    ],
+    "special_abilities": [
+      "Энергетический щит",
+      "Сворачивание в клубок"
+    ],
+    "coloration": [
+      "Биолюминесцентный"
+    ],
+    "behavior_traits": [
+      "Кочевой",
+      "Пугливый",
+      "Территориальный"
+    ],
+    "environmental_adaptations": [
+      "Двойное дыхание",
+      "Влажная кожа",
+      "Перепонки",
+      "Адаптация к двум средам"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'амфибия' из среды 'Амфибия'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: береговая/болотная прибрежная среда.",
+      "en": "A egg of a amphibian from amphibian environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. coastal/marsh shoreline environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'амфибия' из среды 'Амфибия'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: глаза с вертикальными зрачками, круглый рот с присосками, длинные уши. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: слизь, окраска: биолюминесцентный, характерный признак головы: длинные уши. Фон: береговая/болотная прибрежная среда.",
+      "en": "A hatchling amphibian from amphibian. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: eyes with vertical pupils, round mouth with suckers, long ears. Body: soft, stubby limbs. Continuity: surface: mucus, coloration: bioluminescent, signature head trait: long ears. coastal/marsh shoreline environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение амфибия из среды 'Амфибия'. Размер: среднее (Среднее, Средняя). Покрытие: слизь. Форма тела: без крыльев, с плавательными конечностями. Голова: глаза с вертикальными зрачками, круглый рот с присосками, длинные уши. Тело: плавники и хвост, гибкий позвоночник, перепонки, влажная кожа. Способности: энергетический щит, сворачивание в клубок. Окраска: биолюминесцентный. Поведение: кочевой, пугливый, территориальный. Адаптации: двойное дыхание, влажная кожа, перепонки, адаптация к двум средам.  Сквозные признаки вида: покровы: слизь, окраска: биолюминесцентный, характерный признак головы: длинные уши. ",
+      "en": "A detailed amphibian from amphibian environment. Size: medium. Surface: mucus. Head: eyes with vertical pupils, round mouth with suckers, long ears. Body: fins and tail, flexible spine, webbed feet, wet skin. Abilities: energy shield, curling into a ball. Coloration: bioluminescent. Behavior: nomadic, skittish, territorial. Adaptations: dual breathing, wet skin, webbed feet, adaptation to two environments. coastal/marsh shoreline environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

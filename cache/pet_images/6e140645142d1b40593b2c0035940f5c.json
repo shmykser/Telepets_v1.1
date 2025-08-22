@@ -1,0 +1,22 @@
+{
+  "config": {
+    "pet_type": "rabbit",
+    "style": "watercolor",
+    "stage": "egg",
+    "health": 100,
+    "unique_features": [
+      "пятна",
+      "пушистый хвост"
+    ],
+    "color_scheme": "excellent",
+    "accessories": [],
+    "mood": "happy",
+    "background": "мягкий градиентный фон"
+  },
+  "generation_info": {
+    "method": "svg_generation",
+    "user_id": "273065571",
+    "pet_name": "Can",
+    "timestamp": 91198.625
+  }
+}

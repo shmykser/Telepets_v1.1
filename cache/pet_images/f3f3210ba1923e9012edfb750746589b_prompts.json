@@ -1,0 +1,56 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Asr",
+  "creature": {
+    "habitat": "Водное",
+    "type": "Рыба",
+    "size": "Большое",
+    "surface": "Биолюминесцентная кожа",
+    "form_rules": "Без крыльев и перьев, с плавательными приспособлениями",
+    "head_description": "Сложные фасеточные глаза, грызущие резцы, бородавки и наросты",
+    "body_features": [
+      "Восемь щупалец",
+      "Прозрачные участки",
+      "Хвост с биолюминесценцией",
+      "Жабры для дыхания",
+      "Боковая линия для ориентации"
+    ],
+    "special_abilities": [
+      "Ядовитые железы",
+      "Огненное дыхание",
+      "Полет"
+    ],
+    "coloration": [
+      "Биолюминесцентный",
+      "Прозрачный"
+    ],
+    "behavior_traits": [
+      "Игривый",
+      "Инстинктивный",
+      "Территориальный"
+    ],
+    "environmental_adaptations": [
+      "Жабры для дыхания",
+      "Плавательный пузырь",
+      "Боковая линия для ориентации",
+      "Гидродинамическая форма тела"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'рыба' из среды 'Водное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: подводная среда с водой.",
+      "en": "A egg of a fish from aquatic environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. underwater aquatic environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'рыба' из среды 'Водное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: сложные фасеточные глаза, грызущие резцы, бородавки и наросты. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: биолюминесцентная кожа, окраска: биолюминесцентный, характерный признак головы: бородавки и наросты. Фон: подводная среда с водой.",
+      "en": "A hatchling fish from aquatic. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: complex compound eyes, gnawing incisors, warts and growths. Body: soft, stubby limbs. Continuity: surface: bioluminescent skin, coloration: bioluminescent, signature head trait: warts and growths. underwater aquatic environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение рыба из среды 'Водное'. Размер: большое (Медленное, Сильная). Покрытие: биолюминесцентная кожа. Форма тела: без крыльев и перьев, с плавательными приспособлениями. Голова: сложные фасеточные глаза, грызущие резцы, бородавки и наросты. Тело: восемь щупалец, прозрачные участки, хвост с биолюминесценцией, жабры для дыхания, боковая линия для ориентации. Способности: ядовитые железы, огненное дыхание, полет. Окраска: биолюминесцентный, прозрачный. Поведение: игривый, инстинктивный, территориальный. Адаптации: жабры для дыхания, плавательный пузырь, боковая линия для ориентации, гидродинамическая форма тела.  Сквозные признаки вида: покровы: биолюминесцентная кожа, окраска: биолюминесцентный, характерный признак головы: бородавки и наросты. ",
+      "en": "A detailed fish from aquatic environment. Size: large. Surface: bioluminescent skin. Head: complex compound eyes, gnawing incisors, warts and growths. Body: eight tentacles, transparent areas, bioluminescent tail, gills for breathing, lateral line for orientation. Abilities: venom glands, fire breath, flight. Coloration: bioluminescent, transparent. Behavior: playful, instinctive, territorial. Adaptations: gills for breathing, swim bladder, lateral line for orientation, hydrodynamic body shape. underwater aquatic environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

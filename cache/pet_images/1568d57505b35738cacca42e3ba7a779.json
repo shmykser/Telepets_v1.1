@@ -1,0 +1,23 @@
+{
+  "config": {
+    "pet_type": "rabbit",
+    "style": "watercolor",
+    "stage": "adult",
+    "health": 74,
+    "unique_features": [
+      "рога",
+      "большие глаза",
+      "пятна"
+    ],
+    "color_scheme": "good",
+    "accessories": [],
+    "mood": "content",
+    "background": "мягкий градиентный фон"
+  },
+  "generation_info": {
+    "method": "svg_generation",
+    "user_id": "273065571",
+    "pet_name": "asf",
+    "timestamp": 854420.421
+  }
+}

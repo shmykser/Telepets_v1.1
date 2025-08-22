@@ -1,0 +1,55 @@
+{
+  "user_id": "273065571",
+  "pet_name": "DDDD",
+  "creature": {
+    "habitat": "Тропический лес",
+    "type": "Гибрид",
+    "size": "Огромное",
+    "surface": "Перья",
+    "form_rules": "Любая форма, кроме плавников",
+    "head_description": "Глаза с вертикальными зрачками, клюв с острыми краями, биолюминесцентные органы",
+    "body_features": [
+      "Кристаллические выросты",
+      "Гибкий позвоночник",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ],
+    "special_abilities": [
+      "Боковое передвижение",
+      "Телепортация"
+    ],
+    "coloration": [
+      "Скальный",
+      "Переливающиеся чешуйки"
+    ],
+    "behavior_traits": [
+      "Хитрый",
+      "Кочевой",
+      "Любопытный",
+      "Социальное существо"
+    ],
+    "environmental_adaptations": [
+      "Эффективная терморегуляция",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'гибрид' из среды 'Тропический лес'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: тропический лес.",
+      "en": "A egg of a hybrid from tropical forest environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'гибрид' из среды 'Тропический лес'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: глаза с вертикальными зрачками, клюв с острыми краями, биолюминесцентные органы. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: перья, окраска: скальный, характерный признак головы: биолюминесцентные органы. Фон: тропический лес.",
+      "en": "A hatchling hybrid from tropical forest. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: eyes with vertical pupils, sharp beak, bioluminescent organs. Body: soft, stubby limbs. Continuity: surface: feathers, coloration: rock, signature head trait: bioluminescent organs. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение гибрид из среды 'Тропический лес'. Размер: огромное (Очень медленное, Очень сильная). Покрытие: перья. Форма тела: любая форма, кроме плавников. Голова: глаза с вертикальными зрачками, клюв с острыми краями, биолюминесцентные органы. Тело: кристаллические выросты, гибкий позвоночник, адаптация к различным ландшафтам, эффективные конечности для передвижения. Способности: боковое передвижение, телепортация. Окраска: скальный, переливающиеся чешуйки. Поведение: хитрый, кочевой, любопытный, социальное существо. Адаптации: эффективная терморегуляция, развитые органы чувств, адаптация к различным ландшафтам, эффективные конечности для передвижения.  Сквозные признаки вида: покровы: перья, окраска: скальный, характерный признак головы: биолюминесцентные органы. ",
+      "en": "A detailed hybrid from tropical forest environment. Size: huge. Surface: feathers. Head: eyes with vertical pupils, sharp beak, bioluminescent organs. Body: crystalline appendages, flexible spine, adaptation to various landscapes, efficient limbs for movement. Abilities: sideways movement, teleportation. Coloration: rock, iridescent scales. Behavior: cunning, nomadic, curious, social creature. Adaptations: efficient thermoregulation, developed sensory organs, adaptation to various landscapes, efficient limbs for movement. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

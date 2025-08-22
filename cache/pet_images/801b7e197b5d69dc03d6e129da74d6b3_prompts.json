@@ -1,0 +1,54 @@
+{
+  "user_id": "273065571",
+  "pet_name": "dsvsd",
+  "creature": {
+    "habitat": "Горное",
+    "type": "Фэнтези",
+    "size": "Крошечное",
+    "surface": "Шерсть",
+    "form_rules": "Любая форма, кроме плавников",
+    "head_description": "Сложные фасеточные глаза, ротовой аппарат с хелицерами, рога различной формы",
+    "body_features": [
+      "Плавники и хвост",
+      "Кристаллические включения",
+      "Хвост с ядовитым жалом",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам"
+    ],
+    "special_abilities": [
+      "Камуфляж"
+    ],
+    "coloration": [
+      "Песочный",
+      "Песочный",
+      "Энергетическое свечение"
+    ],
+    "behavior_traits": [
+      "Дневной образ жизни",
+      "Мирный травоядный"
+    ],
+    "environmental_adaptations": [
+      "Эффективная терморегуляция",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'фэнтези' из среды 'Горное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: горная местность.",
+      "en": "A egg of a fantasy hybrid from mountain environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. mountain environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'фэнтези' из среды 'Горное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: сложные фасеточные глаза, ротовой аппарат с хелицерами, рога различной формы. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: шерсть, окраска: песочный, характерный признак головы: рога различной формы. Фон: горная местность.",
+      "en": "A hatchling fantasy hybrid from mountain. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: complex compound eyes, mouth with chelicerae, horns of various shapes. Body: soft, stubby limbs. Continuity: surface: fur, coloration: sand, signature head trait: horns of various shapes. mountain environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение фэнтези из среды 'Горное'. Размер: крошечное (Быстрое, Слабая). Покрытие: шерсть. Форма тела: любая форма, кроме плавников. Голова: сложные фасеточные глаза, ротовой аппарат с хелицерами, рога различной формы. Тело: плавники и хвост, кристаллические включения, хвост с ядовитым жалом, развитые органы чувств, адаптация к различным ландшафтам. Способности: камуфляж. Окраска: песочный, песочный, энергетическое свечение. Поведение: дневной образ жизни, мирный травоядный. Адаптации: эффективная терморегуляция, развитые органы чувств, адаптация к различным ландшафтам, эффективные конечности для передвижения.  Сквозные признаки вида: покровы: шерсть, окраска: песочный, характерный признак головы: рога различной формы. ",
+      "en": "A detailed fantasy hybrid from mountain environment. Size: tiny. Surface: fur. Head: complex compound eyes, mouth with chelicerae, horns of various shapes. Body: fins and tail, crystalline inclusions, tail with venomous stinger, developed sensory organs, adaptation to various landscapes. Abilities: camouflage. Coloration: sand, sand, Энергетическое свечение. Behavior: diurnal, peaceful herbivore. Adaptations: efficient thermoregulation, developed sensory organs, adaptation to various landscapes, efficient limbs for movement. mountain environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

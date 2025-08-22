@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-slate-100 font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Предотвращаем зависание при загрузке шрифтов */
+    font-display: swap;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Fallback для шрифтов */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Inter'), local('Segoe UI'), local('Arial'), local('sans-serif');
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('Inter Medium'), local('Segoe UI Semibold'), local('Arial'), local('sans-serif');
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Inter SemiBold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+  }
+  
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Inter Bold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Poppins'), local('Segoe UI'), local('Arial'), local('sans-serif');
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('Poppins Medium'), local('Segoe UI Semibold'), local('Arial'), local('sans-serif');
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Poppins SemiBold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Poppins Bold'), local('Segoe UI Bold'), local('Arial'), local('sans-serif');
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface text-slate-100 hover:bg-slate-700 active:bg-slate-800 border border-border;
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-surface active:bg-slate-700;
+  }
+  
+  .card {
+    @apply rounded-xl border border-border bg-surface p-6 shadow-lg;
+  }
+  
+  .input {
+    @apply flex h-10 w-full rounded-md border border-border bg-surface px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  
+  .health-bar {
+    @apply h-2 rounded-full bg-slate-700 overflow-hidden;
+  }
+  
+  .health-fill {
+    @apply h-full transition-all duration-300 ease-out;
+  }
+  
+  .pet-stage-egg {
+    @apply bg-pet-egg text-amber-900;
+  }
+  
+  .pet-stage-baby {
+    @apply bg-pet-baby text-amber-800;
+  }
+  
+  .pet-stage-teen {
+    @apply bg-pet-teen text-amber-900;
+  }
+  
+  .pet-stage-adult {
+    @apply bg-pet-adult text-amber-900;
+  }
+  
+  .pet-stage-dead {
+    @apply bg-pet-dead text-red-900;
+  }
+  
+  .health-high {
+    @apply bg-health-high;
+  }
+  
+  .health-medium {
+    @apply bg-health-medium;
+  }
+  
+  .health-low {
+    @apply bg-health-low;
+  }
+  
+  .health-critical {
+    @apply bg-health-critical;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-500;
+}
+
+/* Предотвращение зависания загрузки шрифтов */
+.font-loading-fallback {
+  font-family: 'Segoe UI', 'Arial', sans-serif !important;
+}
+
+/* Оптимизация производительности */
+* {
+  box-sizing: border-box;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Улучшение читаемости на разных устройствах */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+} 
+
+/* Embla Carousel basic styles */
+.embla { position: relative; }
+.embla__viewport { overflow: hidden; width: 100%; }
+.embla__container { display: flex; user-select: none; -webkit-touch-callout: none; -khtml-user-select: none; -webkit-tap-highlight-color: transparent; margin-left: -1rem; }
+.embla__slide { position: relative; min-width: 100%; padding-left: 1rem; }

@@ -1,0 +1,56 @@
+{
+  "user_id": "273065571",
+  "pet_name": "jkbhjkb",
+  "creature": {
+    "habitat": "Водное",
+    "type": "Фэнтези",
+    "size": "Большое",
+    "surface": "Кристаллы",
+    "form_rules": "Без крыльев и перьев, с плавательными приспособлениями",
+    "head_description": "Множество маленьких глаз, клыкастая пасть, кристаллические выросты",
+    "body_features": [
+      "Четыре конечности с втяжными когтями",
+      "Гибкий позвоночник",
+      "Кристаллический хвост",
+      "Гидродинамическая форма тела",
+      "Плавательный пузырь"
+    ],
+    "special_abilities": [
+      "Телепортация",
+      "Флуоресценция в УФ",
+      "Регенерация"
+    ],
+    "coloration": [
+      "Серебряный",
+      "Биолюминесцентные пятна"
+    ],
+    "behavior_traits": [
+      "Инстинктивный",
+      "Осторожный",
+      "Любопытный"
+    ],
+    "environmental_adaptations": [
+      "Жабры для дыхания",
+      "Плавательный пузырь",
+      "Боковая линия для ориентации",
+      "Гидродинамическая форма тела"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'фэнтези' из среды 'Водное'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: подводная среда с водой.",
+      "en": "A egg of a fantasy hybrid from aquatic environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. underwater aquatic environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'фэнтези' из среды 'Водное'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: множество маленьких глаз, клыкастая пасть, кристаллические выросты. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: кристаллы, окраска: серебряный, характерный признак головы: кристаллические выросты. Фон: подводная среда с водой.",
+      "en": "A hatchling fantasy hybrid from aquatic. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: multiple small eyes, fanged mouth, crystalline growths. Body: soft, stubby limbs. Continuity: surface: crystal, coloration: silver, signature head trait: crystalline growths. underwater aquatic environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение фэнтези из среды 'Водное'. Размер: большое (Медленное, Сильная). Покрытие: кристаллы. Форма тела: без крыльев и перьев, с плавательными приспособлениями. Голова: множество маленьких глаз, клыкастая пасть, кристаллические выросты. Тело: четыре конечности с втяжными когтями, гибкий позвоночник, кристаллический хвост, гидродинамическая форма тела, плавательный пузырь. Способности: телепортация, флуоресценция в уф, регенерация. Окраска: серебряный, биолюминесцентные пятна. Поведение: инстинктивный, осторожный, любопытный. Адаптации: жабры для дыхания, плавательный пузырь, боковая линия для ориентации, гидродинамическая форма тела.  Сквозные признаки вида: покровы: кристаллы, окраска: серебряный, характерный признак головы: кристаллические выросты. ",
+      "en": "A detailed fantasy hybrid from aquatic environment. Size: large. Surface: crystal. Head: multiple small eyes, fanged mouth, crystalline growths. Body: four limbs with retractable claws, flexible spine, crystalline tail, hydrodynamic body shape, swim bladder. Abilities: teleportation, UV fluorescence, regeneration. Coloration: silver, Биолюминесцентные пятна. Behavior: instinctive, cautious, curious. Adaptations: gills for breathing, swim bladder, lateral line for orientation, hydrodynamic body shape. underwater aquatic environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

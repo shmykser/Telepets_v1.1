@@ -1,0 +1,55 @@
+{
+  "user_id": "273065571",
+  "pet_name": "vefvb",
+  "creature": {
+    "habitat": "Луговое",
+    "type": "Млекопитающее",
+    "size": "Маленькое",
+    "surface": "Панцирь",
+    "form_rules": "Любая форма, кроме плавников",
+    "head_description": "Три глаза треугольником, челюсти с множественными рядами зубов, длинные уши",
+    "body_features": [
+      "Множественные придатки",
+      "Сегментированное тело",
+      "Хвост с биолюминесценцией",
+      "Эффективная терморегуляция",
+      "Адаптация к различным ландшафтам"
+    ],
+    "special_abilities": [
+      "Регенерация",
+      "Электрические разряды"
+    ],
+    "coloration": [
+      "Золотой",
+      "Платиновый",
+      "Биолюминесцентные пятна"
+    ],
+    "behavior_traits": [
+      "Территориальный",
+      "Мирный травоядный"
+    ],
+    "environmental_adaptations": [
+      "Эффективная терморегуляция",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'млекопитающее' из среды 'Луговое'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: луговая равнина.",
+      "en": "A egg of a mammal from grassland environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. grassland plains environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'млекопитающее' из среды 'Луговое'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: три глаза треугольником, челюсти с множественными рядами зубов, длинные уши. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: панцирь, окраска: золотой, характерный признак головы: длинные уши. Фон: луговая равнина.",
+      "en": "A hatchling mammal from grassland. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: three eyes in triangle, jaws with multiple rows of teeth, long ears. Body: soft, stubby limbs. Continuity: surface: shell, coloration: golden, signature head trait: long ears. grassland plains environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение млекопитающее из среды 'Луговое'. Размер: маленькое (Очень быстрое, Умеренная). Покрытие: панцирь. Форма тела: любая форма, кроме плавников. Голова: три глаза треугольником, челюсти с множественными рядами зубов, длинные уши. Тело: множественные придатки, сегментированное тело, хвост с биолюминесценцией, эффективная терморегуляция, адаптация к различным ландшафтам. Способности: регенерация, электрические разряды. Окраска: золотой, платиновый, биолюминесцентные пятна. Поведение: территориальный, мирный травоядный. Адаптации: эффективная терморегуляция, развитые органы чувств, адаптация к различным ландшафтам, эффективные конечности для передвижения.  Сквозные признаки вида: покровы: панцирь, окраска: золотой, характерный признак головы: длинные уши. ",
+      "en": "A detailed mammal from grassland environment. Size: small. Surface: shell. Head: three eyes in triangle, jaws with multiple rows of teeth, long ears. Body: multiple appendages, segmented body, bioluminescent tail, efficient thermoregulation, adaptation to various landscapes. Abilities: regeneration, electric discharges. Coloration: golden, platinum, Биолюминесцентные пятна. Behavior: territorial, peaceful herbivore. Adaptations: efficient thermoregulation, developed sensory organs, adaptation to various landscapes, efficient limbs for movement. grassland plains environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

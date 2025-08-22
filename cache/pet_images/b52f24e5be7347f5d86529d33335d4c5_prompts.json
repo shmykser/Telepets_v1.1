@@ -1,0 +1,57 @@
+{
+  "user_id": "273065571",
+  "pet_name": "ergrth",
+  "creature": {
+    "habitat": "Тропический лес",
+    "type": "Рептилия",
+    "size": "Колоссальное",
+    "surface": "Чешуя",
+    "form_rules": "Любая форма, кроме плавников",
+    "head_description": "Глаза с тепловым зрением, челюсти с множественными рядами зубов, биолюминесцентные органы",
+    "body_features": [
+      "Щупальца с присосками",
+      "Энергетические узоры",
+      "Эффективная терморегуляция",
+      "Развитые органы чувств"
+    ],
+    "special_abilities": [
+      "Флуоресценция в УФ",
+      "Электрические разряды",
+      "Кислотные выделения",
+      "Копание"
+    ],
+    "coloration": [
+      "Рыжий",
+      "Коричневый"
+    ],
+    "behavior_traits": [
+      "Одиночка",
+      "Любопытный",
+      "Социальное существо",
+      "Агрессивный охотник"
+    ],
+    "environmental_adaptations": [
+      "Эффективная терморегуляция",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'рептилия' из среды 'Тропический лес'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: тропический лес.",
+      "en": "A egg of a reptile from tropical forest environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'рептилия' из среды 'Тропический лес'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: глаза с тепловым зрением, челюсти с множественными рядами зубов, биолюминесцентные органы. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: чешуя, окраска: рыжий, характерный признак головы: биолюминесцентные органы. Фон: тропический лес.",
+      "en": "A hatchling reptile from tropical forest. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: thermal vision eyes, jaws with multiple rows of teeth, bioluminescent organs. Body: soft, stubby limbs. Continuity: surface: scales, coloration: reddish, signature head trait: bioluminescent organs. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение рептилия из среды 'Тропический лес'. Размер: колоссальное (Крайне медленное, Колоссальная). Покрытие: чешуя. Форма тела: любая форма, кроме плавников. Голова: глаза с тепловым зрением, челюсти с множественными рядами зубов, биолюминесцентные органы. Тело: щупальца с присосками, энергетические узоры, эффективная терморегуляция, развитые органы чувств. Способности: флуоресценция в уф, электрические разряды, кислотные выделения, копание. Окраска: рыжий, коричневый. Поведение: одиночка, любопытный, социальное существо, агрессивный охотник. Адаптации: эффективная терморегуляция, развитые органы чувств, адаптация к различным ландшафтам, эффективные конечности для передвижения.  Сквозные признаки вида: покровы: чешуя, окраска: рыжий, характерный признак головы: биолюминесцентные органы. ",
+      "en": "A detailed reptile from tropical forest environment. Size: colossal. Surface: scales. Head: thermal vision eyes, jaws with multiple rows of teeth, bioluminescent organs. Body: tentacles with suckers, energy patterns, efficient thermoregulation, developed sensory organs. Abilities: UV fluorescence, electric discharges, acid secretions, digging. Coloration: reddish, brown. Behavior: solitary, curious, social creature, aggressive hunter. Adaptations: efficient thermoregulation, developed sensory organs, adaptation to various landscapes, efficient limbs for movement. tropical forest environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "user_id": "273065571",
+  "pet_name": "Asdc",
+  "creature": {
+    "habitat": "Луговое",
+    "type": "Гибрид",
+    "size": "Маленькое",
+    "surface": "Чешуя",
+    "form_rules": "Любая форма, кроме плавников",
+    "head_description": "Глаза с биолюминесценцией, челюсти с множественными рядами зубов, бивни",
+    "body_features": [
+      "Кристаллические выросты",
+      "Энергетические узоры",
+      "Пушистый хвост",
+      "Эффективная терморегуляция",
+      "Развитые органы чувств"
+    ],
+    "special_abilities": [
+      "Выброс чернил",
+      "Энергетический щит"
+    ],
+    "coloration": [
+      "Кристаллический",
+      "Радужный"
+    ],
+    "behavior_traits": [
+      "Стадное поведение",
+      "Ночной образ жизни"
+    ],
+    "environmental_adaptations": [
+      "Эффективная терморегуляция",
+      "Развитые органы чувств",
+      "Адаптация к различным ландшафтам",
+      "Эффективные конечности для передвижения"
+    ]
+  },
+  "stage_prompts": {
+    "egg": {
+      "ru": "яйцо вида 'гибрид' из среды 'Луговое'. Описание: одиночное яйцо, узнаваемые узоры на скорлупе, отсылки к покровам и окраске вида, гладкая/текстурная скорлупа, лёгкие намёки на форму будущих придатков. Фон: луговая равнина.",
+      "en": "A egg of a hybrid from grassland environment. single egg, recognizable shell patterns, hints of the species' surface and palette, textured shell, subtle motifs of future appendages. grassland plains environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, eyes, pupils, eyelids, face, mouth, beak, teeth, lips, limbs, legs, arms, hands, feet, claws, wings, tail, open egg, cracked shell, broken shell, embryo, fetus, creature visible, animal inside, multiple eggs, nest, characters, text, logo"
+    },
+    "baby": {
+      "ru": "детёныш вида 'гибрид' из среды 'Луговое'. Описание: умилительные пропорции, крупные глаза, большая голова, мягкие черты, короткие конечности, нежные покровы. Голова: глаза с биолюминесценцией, челюсти с множественными рядами зубов, бивни. Тело: мягкие, укороченные конечности. Сквозные признаки вида: покровы: чешуя, окраска: кристаллический, характерный признак головы: бивни. Фон: луговая равнина.",
+      "en": "A hatchling hybrid from grassland. cute proportions, large eyes, bigger head, soft features, short limbs, tender coverings. Head: bioluminescent eyes, jaws with multiple rows of teeth, tusks. Body: soft, stubby limbs. Continuity: surface: scales, coloration: crystalline, signature head trait: tusks. grassland plains environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, adult proportions, muscular, overly defined muscles, scars, battle damage, aggressive posture, fully developed horns, heavy armor, weapons, complex accessories, elderly features, deep wrinkles"
+    },
+    "adult": {
+      "ru": "Детальное изображение гибрид из среды 'Луговое'. Размер: маленькое (Очень быстрое, Умеренная). Покрытие: чешуя. Форма тела: любая форма, кроме плавников. Голова: глаза с биолюминесценцией, челюсти с множественными рядами зубов, бивни. Тело: кристаллические выросты, энергетические узоры, пушистый хвост, эффективная терморегуляция, развитые органы чувств. Способности: выброс чернил, энергетический щит. Окраска: кристаллический, радужный. Поведение: стадное поведение, ночной образ жизни. Адаптации: эффективная терморегуляция, развитые органы чувств, адаптация к различным ландшафтам, эффективные конечности для передвижения.  Сквозные признаки вида: покровы: чешуя, окраска: кристаллический, характерный признак головы: бивни. ",
+      "en": "A detailed hybrid from grassland environment. Size: small. Surface: scales. Head: bioluminescent eyes, jaws with multiple rows of teeth, tusks. Body: crystalline appendages, energy patterns, fluffy tail, efficient thermoregulation, developed sensory organs. Abilities: ink jet, energy shield. Coloration: crystalline, rainbow. Behavior: herd behavior, nocturnal. Adaptations: efficient thermoregulation, developed sensory organs, adaptation to various landscapes, efficient limbs for movement. grassland plains environment, high quality, detailed",
+      "negative": "blurry, low quality, watermark, text, logo, extra limbs, cropped, cut off, deformed, ugly, bad anatomy, disfigured, poorly drawn face, mutated, extra limb, poorly drawn hands, missing limb, floating limbs, disconnected limbs, malformed hands, blur, out of focus, long neck, long body, mutated hands and fingers, out of frame, double, two heads, blurred, ugly, disfigured, too many limbs, deformed, repetitive, black and white, grainy, extra limbs, bad anatomy, high contrast, overexposed, underexposed, over-saturated, under-saturated, low quality, low quality multiple views, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, cartoon, anime, illustration, drawing, painting, sketch, 2d, flat, stylized, unrealistic, fantasy art style, digital art style, baby-like proportions, chibi, oversized eyes, pacifier, toys, diaper, cute cartoon style, egg shell, nest"
+    }
+  }
+}
