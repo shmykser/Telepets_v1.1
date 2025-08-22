@@ -3,11 +3,11 @@ from sqlalchemy.orm import sessionmaker
 from models import Base
 from config.settings import DATABASE_URL
 
-# Используем настройку из settings.py
-# Для SQLite используем асинхронный движок
+# Преобразуем синхронные URL в асинхронные драйверы при необходимости
 if DATABASE_URL.startswith("sqlite://"):
-    # Заменяем sqlite:// на sqlite+aiosqlite:// для асинхронной работы
     async_database_url = DATABASE_URL.replace("sqlite://", "sqlite+aiosqlite://")
+elif DATABASE_URL.startswith("postgresql://"):
+    async_database_url = DATABASE_URL.replace("postgresql://", "postgresql+asyncpg://")
 else:
     async_database_url = DATABASE_URL
 
