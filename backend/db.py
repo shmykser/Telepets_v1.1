@@ -2,6 +2,8 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base
 from config.settings import DATABASE_URL
+import ssl
+import certifi
 
 # Преобразуем синхронные URL в асинхронные драйверы при необходимости
 if DATABASE_URL.startswith("sqlite://"):
@@ -14,8 +16,9 @@ else:
 # Аргументы подключения (SSL для Render Postgres)
 connect_args: dict = {}
 if async_database_url.startswith("postgresql+asyncpg://"):
-    # Требуем SSL при подключении к Render Postgres
-    connect_args = {"ssl": True}
+    # Создаём SSL контекст с корневыми сертификатами
+    ssl_context = ssl.create_default_context(cafile=certifi.where())
+    connect_args = {"ssl": ssl_context}
 
 engine = create_async_engine(
     async_database_url,

@@ -7,6 +7,8 @@ from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import async_engine_from_config
 from sqlalchemy.engine.url import make_url
 from alembic import context
+import ssl
+import certifi
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -81,7 +83,9 @@ def run_migrations_online() -> None:
 
     connect_args = {}
     if async_url.startswith("postgresql+asyncpg://"):
-        connect_args = {"ssl": True}
+        # SSL контекст с CA certs
+        ssl_context = ssl.create_default_context(cafile=certifi.where())
+        connect_args = {"ssl": ssl_context}
 
     connectable = async_engine_from_config(
         configuration,
