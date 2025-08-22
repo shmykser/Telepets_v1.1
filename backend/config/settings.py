@@ -180,7 +180,35 @@ DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./telepets.db")
 
 # ===== НАСТРОЙКИ API =====
 API_HOST = os.getenv("API_HOST", "127.0.0.1")
-API_PORT = int(os.getenv("API_PORT", "3000"))
+def _parse_port(default_port: int = 3000) -> int:
+    """Безопасно парсит порт из переменных окружения.
+
+    Поддерживает случаи, когда переменная API_PORT содержит алиас вида
+    "$PORT" (как на Render). В таком случае читаем реальное значение
+    из переменной PORT. Если значений нет или они некорректны —
+    возвращаем default_port.
+    """
+    raw = os.getenv("API_PORT")
+    if raw:
+        stripped = raw.strip()
+        # Поддержка алиаса вида "$PORT"
+        if stripped.startswith("$"):
+            alias = stripped.lstrip("$")
+            alias_val = os.getenv(alias)
+            if alias_val and alias_val.isdigit():
+                return int(alias_val)
+        # Обычное числовое значение
+        if stripped.isdigit():
+            return int(stripped)
+
+    # Платформенный порт (Render задаёт PORT)
+    platform_port = os.getenv("PORT")
+    if platform_port and platform_port.isdigit():
+        return int(platform_port)
+
+    return default_port
+
+API_PORT = _parse_port(3000)
 
 # ===== НАСТРОЙКИ МОНИТОРИНГА =====
 MONITORING_UPDATE_INTERVAL = 300  # 5 минут
