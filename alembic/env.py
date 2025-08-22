@@ -5,6 +5,7 @@ import os
 import asyncio
 from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import async_engine_from_config
+from sqlalchemy.engine.url import make_url
 from alembic import context
 
 # this is the Alembic Config object, which provides
@@ -46,7 +47,15 @@ def get_url() -> str:
     # Alembic expects sync driver; replace aiosqlite URL for offline config if needed
     if db_url.startswith("sqlite+"):
         db_url = db_url.replace("sqlite+aiosqlite://", "sqlite:///")
-    return db_url
+    # Санитизируем query-параметры: asyncpg не поддерживает sslmode
+    try:
+        url_obj = make_url(db_url)
+        if url_obj.query and "sslmode" in url_obj.query:
+            new_query = {k: v for k, v in url_obj.query.items() if k != "sslmode"}
+            url_obj = url_obj.set(query=new_query)
+        return str(url_obj)
+    except Exception:
+        return db_url
 
 
 def run_migrations_offline() -> None:
