@@ -210,6 +210,9 @@ def _parse_port(default_port: int = 3000) -> int:
 
 API_PORT = _parse_port(3000)
 
+# Разрешить пропуск инициализации БД/фоновых задач при старте (для деплоя)
+SKIP_DB_ON_STARTUP = os.getenv("SKIP_DB_ON_STARTUP", "false").strip().lower() in {"1", "true", "yes", "y"}
+
 # ===== НАСТРОЙКИ МОНИТОРИНГА =====
 MONITORING_UPDATE_INTERVAL = 300  # 5 минут
 MONITORING_REQUEST_HISTORY_LIMIT = 1000

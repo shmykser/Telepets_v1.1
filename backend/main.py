@@ -10,7 +10,7 @@ from .api import market
 from .api import user_profile
 from .tasks import start_health_decrease_task, start_auction_finalize_task
 from .monitoring import start_monitoring_task, MonitoringMiddleware
-from .config.settings import APP_VERSION, API_HOST, API_PORT
+from .config.settings import APP_VERSION, API_HOST, API_PORT, SKIP_DB_ON_STARTUP
 import asyncio
 import logging
 import time
@@ -30,17 +30,20 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info(f"Запуск Telepets API {APP_VERSION}")
     
-    # Инициализация базы данных
-    await init_db()
-    logger.info("База данных инициализирована")
-    
-    # Запуск фоновой задачи по уменьшению здоровья
-    await start_health_decrease_task()
-    logger.info("Фоновая задача здоровья запущена")
-    
-    # Запуск фоновой задачи финализации аукционов
-    await start_auction_finalize_task()
-    logger.info("Фоновая задача аукционов запущена")
+    if SKIP_DB_ON_STARTUP:
+        logger.warning("SKIP_DB_ON_STARTUP=1 — пропускаю init_db и фоновые задачи")
+    else:
+        # Инициализация базы данных
+        await init_db()
+        logger.info("База данных инициализирована")
+        
+        # Запуск фоновой задачи по уменьшению здоровья
+        await start_health_decrease_task()
+        logger.info("Фоновая задача здоровья запущена")
+        
+        # Запуск фоновой задачи финализации аукционов
+        await start_auction_finalize_task()
+        logger.info("Фоновая задача аукционов запущена")
     
     # Запуск задачи мониторинга
     asyncio.create_task(start_monitoring_task())
