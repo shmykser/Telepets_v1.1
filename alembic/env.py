@@ -2,7 +2,9 @@ from __future__ import annotations
 
 from logging.config import fileConfig
 import os
-from sqlalchemy import engine_from_config, pool
+import asyncio
+from sqlalchemy import pool
+from sqlalchemy.ext.asyncio import async_engine_from_config
 from alembic import context
 
 # this is the Alembic Config object, which provides
@@ -62,25 +64,38 @@ def run_migrations_offline() -> None:
 
 def run_migrations_online() -> None:
     configuration = config.get_section(config.config_ini_section) or {}
-    configuration["sqlalchemy.url"] = get_url()
+    sync_url = get_url()
+    async_url = sync_url
+    if sync_url.startswith("postgresql://"):
+        async_url = sync_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+    configuration["sqlalchemy.url"] = async_url
 
-    connectable = engine_from_config(
+    connect_args = {}
+    if async_url.startswith("postgresql+asyncpg://"):
+        connect_args = {"ssl": True}
+
+    connectable = async_engine_from_config(
         configuration,
         prefix="sqlalchemy.",
         poolclass=pool.NullPool,
+        connect_args=connect_args,
     )
 
-    with connectable.connect() as connection:
+    def _do_run_migrations(sync_connection):
         # Гарантируем наличие базовых таблиц из моделей перед применением миграций
         try:
-            Base.metadata.create_all(connection)
+            Base.metadata.create_all(sync_connection)
         except Exception:
-            # Не блокируем миграции, если создание уже выполнено или не требуется
             pass
-        context.configure(connection=connection, target_metadata=target_metadata)
-
+        context.configure(connection=sync_connection, target_metadata=target_metadata)
         with context.begin_transaction():
             context.run_migrations()
+
+    async def _run_async() -> None:
+        async with connectable.connect() as connection:
+            await connection.run_sync(_do_run_migrations)
+
+    asyncio.run(_run_async())
 
 
 if context.is_offline_mode():
