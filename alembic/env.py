@@ -50,9 +50,9 @@ def get_url() -> str:
     # Санитизируем query-параметры: asyncpg не поддерживает sslmode
     try:
         url_obj = make_url(db_url)
-        if url_obj.query and "sslmode" in url_obj.query:
-            new_query = {k: v for k, v in url_obj.query.items() if k != "sslmode"}
-            url_obj = url_obj.set(query=new_query)
+        # Полностью очищаем query-параметры, чтобы не передавать несовместимые опции (например, sslmode)
+        if url_obj.query:
+            url_obj = url_obj.set(query={})
         return str(url_obj)
     except Exception:
         return db_url
