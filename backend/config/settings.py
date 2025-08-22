@@ -356,8 +356,8 @@ def get_stage_negative_prompt(stage_key: str, include_global: bool = True) -> st
 
 # ===== НАСТРОЙКИ АНОНИМНОСТИ =====
 
-# Настройки анонимности пользователей (временно отключено из-за проблем совместимости)
-ANONYMOUS_MODE_ENABLED = False
+# Настройки анонимности пользователей
+ANONYMOUS_MODE_ENABLED = True
 MIN_DISPLAY_NAME_LENGTH = 2
 MAX_DISPLAY_NAME_LENGTH = 20
 DEFAULT_ANONYMOUS_MODE = False
