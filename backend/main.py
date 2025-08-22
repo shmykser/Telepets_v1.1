@@ -2,15 +2,15 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
-from db import init_db
-from api import create, health_up, summary, economy
-from api import monitoring, debug, pet_images
-from api import auth_api
-from api import market
-from api import user_profile
-from tasks import start_health_decrease_task, start_auction_finalize_task
-from monitoring import start_monitoring_task, MonitoringMiddleware
-from config.settings import APP_VERSION, API_HOST, API_PORT
+from .db import init_db
+from .api import create, health_up, summary, economy
+from .api import monitoring, debug, pet_images
+from .api import auth_api
+from .api import market
+from .api import user_profile
+from .tasks import start_health_decrease_task, start_auction_finalize_task
+from .monitoring import start_monitoring_task, MonitoringMiddleware
+from .config.settings import APP_VERSION, API_HOST, API_PORT
 import asyncio
 import logging
 import time
@@ -105,7 +105,7 @@ async def test():
 async def time_test():
     """Тестовый endpoint для проверки времени"""
     from datetime import datetime, timedelta
-    from config.settings import STAGE_TRANSITION_INTERVAL
+    from .config.settings import STAGE_TRANSITION_INTERVAL
     
     created_at = datetime.utcnow() - timedelta(seconds=STAGE_TRANSITION_INTERVAL)
     now = datetime.utcnow()
