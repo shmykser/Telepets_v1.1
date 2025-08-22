@@ -71,6 +71,12 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
+        # Гарантируем наличие базовых таблиц из моделей перед применением миграций
+        try:
+            Base.metadata.create_all(connection)
+        except Exception:
+            # Не блокируем миграции, если создание уже выполнено или не требуется
+            pass
         context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
