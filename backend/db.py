@@ -4,6 +4,7 @@ from models import Base
 from config.settings import DATABASE_URL
 import ssl
 import certifi
+from urllib.parse import urlparse
 
 # Преобразуем синхронные URL в асинхронные драйверы при необходимости
 if DATABASE_URL.startswith("sqlite://"):
@@ -13,12 +14,15 @@ elif DATABASE_URL.startswith("postgresql://"):
 else:
     async_database_url = DATABASE_URL
 
-# Аргументы подключения (SSL для Render Postgres)
+# Аргументы подключения (SSL включаем только для внешних URL)
 connect_args: dict = {}
 if async_database_url.startswith("postgresql+asyncpg://"):
-    # Создаём SSL контекст с корневыми сертификатами
-    ssl_context = ssl.create_default_context(cafile=certifi.where())
-    connect_args = {"ssl": ssl_context}
+    parsed = urlparse(async_database_url)
+    hostname = parsed.hostname or ""
+    is_external_host = "." in hostname  # внутренние хосты Render вида 'dpg-xxxxx' без точки
+    if is_external_host:
+        ssl_context = ssl.create_default_context(cafile=certifi.where())
+        connect_args = {"ssl": ssl_context}
 
 engine = create_async_engine(
     async_database_url,

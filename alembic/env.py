@@ -50,12 +50,14 @@ def get_url() -> str:
         db_url = db_url.replace("sqlite+aiosqlite://", "sqlite:///")
     if db_url.startswith("postgresql+asyncpg://"):
         db_url = db_url.replace("postgresql+asyncpg://", "postgresql://", 1)
-    # Стандартизируем query: выставим sslmode=require и уберём прочее
+    # Для внешних URL PostgreSQL можно добавлять sslmode=require, для internal — не трогаем
     try:
         url_obj = make_url(db_url)
         if url_obj.drivername.startswith("postgresql"):
             url_obj = url_obj.set(drivername="postgresql")
-            url_obj = url_obj.set(query={"sslmode": "require"})
+            host = url_obj.host or ""
+            if "." in host:  # внешний хост
+                url_obj = url_obj.set(query={"sslmode": "require"})
         return str(url_obj)
     except Exception:
         return db_url
@@ -81,14 +83,17 @@ def run_migrations_online() -> None:
 
     connect_args = {}
     if sync_url.startswith("postgresql://"):
-        # Параметры надёжности соединения для psycopg2
-        connect_args = {
-            "sslmode": "require",
+        from sqlalchemy.engine.url import make_url as _make
+        host = _make(sync_url).host or ""
+        # sslmode только для внешних URL
+        if "." in host:
+            connect_args["sslmode"] = "require"
+        connect_args.update({
             "keepalives": 1,
             "keepalives_idle": 5,
             "keepalives_interval": 5,
             "keepalives_count": 5,
-        }
+        })
 
     connectable = engine_from_config(
         configuration,
