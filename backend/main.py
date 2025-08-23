@@ -10,9 +10,17 @@ from .api import market
 from .api import user_profile
 from .tasks import start_health_decrease_task, start_auction_finalize_task
 from .monitoring import start_monitoring_task, MonitoringMiddleware
-from .config.settings import APP_VERSION, API_HOST, API_PORT, SKIP_DB_ON_STARTUP
+from .config.settings import (
+    APP_VERSION,
+    API_HOST,
+    API_PORT,
+    SKIP_DB_ON_STARTUP,
+    RUN_MIGRATIONS_ON_STARTUP,
+)
 import asyncio
 import logging
+import os
+from pathlib import Path
 import time
 
 # Настройка логирования
@@ -29,6 +37,27 @@ async def lifespan(app: FastAPI):
     """
     # Startup
     logger.info(f"Запуск Telepets API {APP_VERSION}")
+
+    # Опционально запускаем Alembic миграции на старте
+    if RUN_MIGRATIONS_ON_STARTUP:
+        try:
+            from alembic.config import Config as AlembicConfig
+            from alembic import command as alembic_command
+
+            project_root = Path(__file__).resolve().parents[1]
+            alembic_ini = project_root / "alembic.ini"
+            alembic_dir = project_root / "alembic"
+
+            cfg = AlembicConfig(str(alembic_ini))
+            cfg.set_main_option("script_location", str(alembic_dir))
+            # DATABASE_URL подтянется из env / settings внутри alembic/env.py
+
+            loop = asyncio.get_running_loop()
+            logger.info("Запуск Alembic миграций: upgrade head")
+            await loop.run_in_executor(None, lambda: alembic_command.upgrade(cfg, "head"))
+            logger.info("Alembic миграции применены")
+        except Exception as mig_exc:  # noqa: BLE001
+            logger.error(f"Ошибка применения миграций на старте: {mig_exc}")
     
     if SKIP_DB_ON_STARTUP:
         logger.warning("SKIP_DB_ON_STARTUP=1 — пропускаю init_db и фоновые задачи")
