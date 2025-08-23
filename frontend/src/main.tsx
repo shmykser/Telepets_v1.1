@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider, setLogger } from 'react-query'
 import Notification from '@/components/Notification'
 import App from './App.tsx'
 import './index.css'
-import { initializeFonts } from '@/lib/fonts'
+import { initializeFonts } from '@/utils/fonts'
 
 // Инициализируем шрифты для предотвращения зависания
 initializeFonts();

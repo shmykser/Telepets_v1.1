@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { isFontAvailable, getAvailableFont } from '@/lib/fonts';
+import { isFontAvailable, getAvailableFont } from '@/utils/fonts';
 
 interface FontLoaderProps {
   children: React.ReactNode;
