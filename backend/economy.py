@@ -22,8 +22,10 @@ class EconomyService:
     """Сервис для управления экономикой"""
     
     @staticmethod
-    async def create_user_wallet(db: AsyncSession, user_id: str, username: str = None) -> Wallet:
-        """Создает кошелек для нового пользователя"""
+    async def create_user_wallet(db: AsyncSession, user_id: str, username: str = None, _retry: bool = False) -> Wallet:
+        """Создает кошелек для нового пользователя.
+        При первой ошибке (например, если таблицы ещё не созданы) выполнит init_db() и повторит попытку один раз.
+        """
         try:
             # Проверяем, существует ли пользователь
             user_result = await db.execute(
@@ -74,6 +76,15 @@ class EconomyService:
             
         except Exception as e:
             logger.error(f"Ошибка создания кошелька для {user_id}: {e}")
+            if not _retry:
+                try:
+                    # Пытаемся инициализировать БД и повторить
+                    from db import init_db  # локальный импорт, чтобы избежать циклов
+                    await init_db()
+                    logger.info("Выполнен init_db() после ошибки — повторяю создание кошелька")
+                    return await EconomyService.create_user_wallet(db, user_id, username, _retry=True)
+                except Exception as e2:
+                    logger.error(f"Повторная ошибка после init_db для {user_id}: {e2}")
             raise
     
     @staticmethod
