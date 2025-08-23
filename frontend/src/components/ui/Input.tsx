@@ -1,11 +1,28 @@
 import * as React from "react"
 import { cn } from "@/utils"
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  /**
+   * Разрешить только латинские буквы (A-Z, a-z). Все остальные символы отфильтровываются на вводе.
+   */
+  onlyLatin?: boolean
+}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => {
+  ({ className, type, onChange, onlyLatin, ...props }, ref) => {
+    const handleChange = React.useCallback(
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (onlyLatin) {
+          const sanitized = e.target.value.replace(/[^A-Za-z]/g, "")
+          if (sanitized !== e.target.value) {
+            e.target.value = sanitized
+          }
+        }
+        onChange?.(e)
+      },
+      [onChange, onlyLatin]
+    )
+
     return (
       <input
         type={type}
@@ -14,6 +31,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           className
         )}
         ref={ref}
+        onChange={handleChange}
         {...props}
       />
     )

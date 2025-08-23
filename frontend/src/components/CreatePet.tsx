@@ -37,6 +37,7 @@ export default function CreatePet({ petName, setPetName, onCreate, onCancel, isC
             onChange={(e) => setPetName((e.target as HTMLInputElement).value)}
             placeholder="Введите имя питомца"
             onKeyPress={(e) => e.key === 'Enter' && onCreate()}
+            onlyLatin
           />
           <div className="flex space-x-2 items-center">
             <Button
