@@ -22,7 +22,7 @@ const API_BASE_URL = import.meta.env.DEV ? '/api' : (import.meta.env.VITE_API_UR
 // Базовый клиент для всех запросов
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
+  timeout: 60000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -31,7 +31,7 @@ const api = axios.create({
 // Отдельный клиент без интерсепторов для /auth/token, чтобы избежать рекурсии
 const authClient = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 10000,
+  timeout: 60000,
   headers: {
     'Content-Type': 'application/json',
   },
