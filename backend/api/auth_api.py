@@ -3,8 +3,10 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from db import get_db
 from auth import create_user_token
 from economy import EconomyService
+import logging
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
+logger = logging.getLogger(__name__)
 
 
 @router.post("/token")
@@ -19,6 +21,8 @@ async def issue_token(user_id: str, username: str = None, db: AsyncSession = Dep
         token = create_user_token(user_id)
         return {"access_token": token, "token_type": "bearer", "user_id": user_id}
     except Exception as e:
+        # Подробный лог ошибки для диагностики 500 на проде
+        logger.exception(f"issue_token failed for user_id={user_id}, username={username}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
