@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button'
 import { Input } from '@/components/ui/Input'
 import { useCreateAuction } from '@/hooks/useEconomy'
 import { useAllPets } from '@/hooks/usePet'
-import { getStoredUserId } from '@/lib/utils'
+import { getStoredUserId } from '@/utils'
 import { X } from 'lucide-react'
 
 export default function CreateAuctionModal({ onClose, initialPetId, onSubmitted }: { onClose: () => void; initialPetId?: number; onSubmitted?: () => void }) {

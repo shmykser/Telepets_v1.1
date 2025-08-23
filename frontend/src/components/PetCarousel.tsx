@@ -2,7 +2,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import { useEffect, useCallback, useMemo } from 'react'
 import PetCard from '@/components/PetCard'
 import type { Pet } from '@/types'
-import { getStoredUserId } from '@/lib/utils'
+import { getStoredUserId } from '@/utils'
 
 interface PetCarouselProps {
   pets: Pet[]

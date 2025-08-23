@@ -3,7 +3,7 @@ import { Coins, TrendingUp, TrendingDown, Gift, DollarSign } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { useWallet, useTransactions, useUserStats, useActionCosts, useDailyLogin, usePurchaseCoins } from '@/hooks/useEconomy'
-import { formatDate } from '@/lib/utils'
+import { formatDate } from '@/utils'
 
 export default function Economy() {
   const { wallet, isLoading: walletLoading } = useWallet()

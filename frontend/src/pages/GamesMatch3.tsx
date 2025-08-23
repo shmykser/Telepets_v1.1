@@ -1,4 +1,4 @@
-import { getStoredUserId } from '@/lib/utils'
+import { getStoredUserId } from '@/utils'
 import GameWindow from '@/components/games/GameWindow'
 import { match3Adapter } from '@/adapters/match3Adapter'
 

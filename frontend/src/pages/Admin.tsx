@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Link } from 'react-router-dom'
 import UserId from '@/components/UserId'
-import { getStoredUserId, setStoredUserId } from '@/lib/utils'
+import { getStoredUserId, setStoredUserId } from '@/utils'
 import ApiEndpointsList from '@/pages/Settings/ApiEndpointsList'
 import DevInfo from '@/pages/Settings/DevInfo'
 

@@ -6,7 +6,7 @@ import CreateAuctionModal from '@/components/market/CreateAuctionModal'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 import { useAllPets } from '@/hooks/usePet'
-import { getStageInfo, formatDate } from '@/lib/utils'
+import { getStageInfo, formatDate } from '@/utils'
 import HealthBar from '@/components/ui/HealthBar'
 import { Link } from 'react-router-dom'
 

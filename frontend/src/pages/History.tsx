@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { History as HistoryIcon, Heart, Calendar, User } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { useAllPets } from '@/hooks/usePet'
-import { getStageInfo, formatDate } from '@/lib/utils'
+import { getStageInfo, formatDate } from '@/utils'
 import HealthBar from '@/components/ui/HealthBar'
 
 export default function History() {

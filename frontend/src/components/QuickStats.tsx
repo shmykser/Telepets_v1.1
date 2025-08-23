@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/Card'
 import { Heart, Coins, Users, Skull } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils'
 import { Link } from 'react-router-dom'
 
 export type QuickStatItem = 'totalPets' | 'alivePets' | 'deadPets' | 'coins' | 'status'

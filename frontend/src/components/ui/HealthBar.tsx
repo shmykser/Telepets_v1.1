@@ -1,4 +1,4 @@
-import { cn, getHealthColor } from '@/lib/utils'
+import { cn, getHealthColor } from '@/utils'
 
 interface HealthBarProps {
   value: number

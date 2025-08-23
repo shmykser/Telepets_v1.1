@@ -12,10 +12,10 @@ import {
   User,
   Store
 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils'
 import { useAllPets } from '@/hooks/usePet'
 import { useUserProfile } from '@/hooks/useUserProfile'
-import { getStoredUserId } from '@/lib/utils'
+import { getStoredUserId } from '@/utils'
 
 interface LayoutProps {
   children: React.ReactNode

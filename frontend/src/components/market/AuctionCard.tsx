@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { getStoredUserId, formatTime } from '@/lib/utils'
+import { getStoredUserId, formatTime } from '@/utils'
 import { useBuyNow, usePlaceBid } from '@/hooks/useEconomy'
 import useTimer from '@/hooks/useTimer'
 import type { Auction } from '@/types'

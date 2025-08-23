@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { economyApi, marketApi, authApi } from '@/lib/api'
-import { getStoredUserId } from '@/lib/utils'
+import { getStoredUserId } from '@/utils'
 import { notifySuccess, notifyError } from '@/lib/notifications'
 import { useMemo } from 'react'
 import type { Auction } from '@/types'

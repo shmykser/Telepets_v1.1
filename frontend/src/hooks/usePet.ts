@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { petApi, economyApi } from '@/lib/api'
-import { getStoredUserId } from '@/lib/utils'
+import { getStoredUserId } from '@/utils'
 import { notifySuccess, notifyError } from '@/components/Notification'
 import { useMemo } from 'react'
 
