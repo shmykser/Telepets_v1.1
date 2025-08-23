@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from db import get_db
@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 router = APIRouter(prefix="/create", tags=["Pet"])
 
 @router.post("")
-async def create_pet(user_id: str, name: str, override: bool = False, db: AsyncSession = Depends(get_db)):
+async def create_pet(user_id: str, name: str, override: bool = False, request: Request = None, db: AsyncSession = Depends(get_db)):
     """
     Создает нового питомца для пользователя.
     Автоматически создает кошелек, если его нет.
@@ -85,8 +85,10 @@ async def create_pet(user_id: str, name: str, override: bool = False, db: AsyncS
             coins_reward=50
         )
         
-        # URL эндпоинта получения изображения (сервер отдаёт из БД и при отсутствии — генерирует и сохраняет)
-        image_url = f"/pet-images/{user_id}/{name}"
+        # URL эндпоинта получения изображения (абсолютный URL для корректной загрузки с фронтенда)
+        base_url = str(request.base_url).rstrip("/") if request is not None else ""
+        image_path = f"/pet-images/{user_id}/{name}"
+        image_url = f"{base_url}{image_path}" if base_url else image_path
         
         return {
             "id": new_pet.id,
