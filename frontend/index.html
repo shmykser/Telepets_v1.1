@@ -88,6 +88,16 @@
           if (window.Telegram && window.Telegram.WebApp) {
             const tg = window.Telegram.WebApp;
             tg.expand();
+            // Если открыто внутри Telegram — сохраняем Telegram user_id/username для последующей авторизации
+            try {
+              const tgUser = tg.initDataUnsafe && tg.initDataUnsafe.user;
+              if (tgUser && tgUser.id) {
+                localStorage.setItem('user_id', String(tgUser.id));
+                if (tgUser.username) {
+                  localStorage.setItem('username', tgUser.username);
+                }
+              }
+            } catch {}
             // Безопасные вызовы с проверкой версии API
             try {
               if (typeof tg.isVersionAtLeast === 'function' && typeof tg.setHeaderColor === 'function' && tg.isVersionAtLeast('6.1')) {
