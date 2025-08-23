@@ -88,6 +88,10 @@
           if (window.Telegram && window.Telegram.WebApp) {
             const tg = window.Telegram.WebApp;
             tg.expand();
+            // Блокируем вертикальные свайпы (сворачивание WebApp)
+            try {
+              if (typeof tg.disableVerticalSwipes === 'function') tg.disableVerticalSwipes();
+            } catch {}
             // Если открыто внутри Telegram — сохраняем Telegram user_id/username для последующей авторизации
             try {
               const tgUser = tg.initDataUnsafe && tg.initDataUnsafe.user;
@@ -108,6 +112,22 @@
               if (typeof tg.isVersionAtLeast === 'function' && typeof tg.setBackgroundColor === 'function' && tg.isVersionAtLeast('6.2')) {
                 tg.setBackgroundColor('#0b1220');
               }
+            } catch {}
+            // Проставим безопасные отступы для верхней/нижней панели Telegram, если есть
+            try {
+              const setSafeAreas = () => {
+                // Telegram SDK выставляет CSS-переменные --tg-viewport-... в некоторых клиентах
+                // Добавим fallback на env(safe-area-inset-*) через CSS (см. index.css)
+                const root = document.documentElement;
+                if (tg && tg.isExpanded) {
+                  // Наличие события достаточно, чтобы браузер посчитал safe-area
+                  root.style.setProperty('--tg-safe-top', 'env(safe-area-inset-top, 0px)');
+                  root.style.setProperty('--tg-safe-bottom', 'env(safe-area-inset-bottom, 0px)');
+                }
+              };
+              setSafeAreas();
+              tg.onEvent('viewport_changed', setSafeAreas);
+              tg.onEvent('safe_area_changed', setSafeAreas);
             } catch {}
           }
         } catch (e) {}

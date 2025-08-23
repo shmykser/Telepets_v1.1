@@ -12,6 +12,9 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     /* Предотвращаем зависание при загрузке шрифтов */
     font-display: swap;
+    /* Safe area под Telegram/iOS бары */
+    padding-top: var(--tg-safe-top, env(safe-area-inset-top, 0px));
+    padding-bottom: var(--tg-safe-bottom, env(safe-area-inset-bottom, 0px));
   }
   
   html {
