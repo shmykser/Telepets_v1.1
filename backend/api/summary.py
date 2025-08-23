@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException, Depends, Request
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from db import get_db
@@ -39,7 +39,7 @@ def calculate_time_to_next_stage(current_stage: str, created_at: datetime, updat
         return 0
 
 @router.get("")
-async def get_summary(user_id: str, db: AsyncSession = Depends(get_db)):
+async def get_summary(user_id: str, request: Request, db: AsyncSession = Depends(get_db)):
     """
     Получает информацию о питомце пользователя из базы данных.
     """
@@ -125,8 +125,10 @@ async def get_summary(user_id: str, db: AsyncSession = Depends(get_db)):
         current_index = STAGE_ORDER.index(active_pet.state.value)
         next_stage = STAGE_ORDER[current_index + 1] if current_index < len(STAGE_ORDER) - 1 else active_pet.state.value
         
-        # URL изображения (сервер сам сгенерирует при первом запросе)
-        image_url = f"/pet-images/{active_pet.user_id}/{active_pet.name}"
+        # URL изображения (абсолютный URL на домен API)
+        base_url = str(request.base_url).rstrip("/")
+        image_path = f"/pet-images/{active_pet.user_id}/{active_pet.name}"
+        image_url = f"{base_url}{image_path}"
         
         # Подготовка расширенных данных
         creature = None
@@ -171,7 +173,7 @@ async def get_summary(user_id: str, db: AsyncSession = Depends(get_db)):
         raise HTTPException(status_code=500, detail="Ошибка получения питомца")
 
 @router.get("/all")
-async def get_all_pets_summary(user_id: str, db: AsyncSession = Depends(get_db)):
+async def get_all_pets_summary(user_id: str, request: Request, db: AsyncSession = Depends(get_db)):
     """
     Получает сводку всех питомцев пользователя из базы данных.
     """
@@ -211,6 +213,7 @@ async def get_all_pets_summary(user_id: str, db: AsyncSession = Depends(get_db))
         alive_pets = 0
         dead_pets = 0
         
+        base_url = str(request.base_url).rstrip("/")
         for pet in pets:
             status = pet.status.value
             if pet.status == PetLifeStatus.alive:
@@ -239,6 +242,7 @@ async def get_all_pets_summary(user_id: str, db: AsyncSession = Depends(get_db))
             except Exception:
                 time_to_next_stage = 0
 
+            image_path = f"/pet-images/{pet.user_id}/{pet.name}"
             pets_data.append({
                 "id": pet.id,
                 "name": pet.name,
@@ -250,6 +254,7 @@ async def get_all_pets_summary(user_id: str, db: AsyncSession = Depends(get_db))
                 "updated_at": pet.updated_at.isoformat() + "Z" if pet.updated_at else pet.created_at.isoformat() + "Z",
                 "creature": creature,
                 "prompts": prompts,
+                "image_url": f"{base_url}{image_path}",
             })
         
         # Проверяем, есть ли живые питомцы
