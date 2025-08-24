@@ -10,6 +10,8 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import aiohttp
+from fastapi import FastAPI
+import uvicorn
 import os
 from dotenv import load_dotenv
 
@@ -32,6 +34,13 @@ if not BOT_TOKEN or BOT_TOKEN == "your_bot_token_here":
 # Инициализация бота
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
+
+# Небольшое HTTP‑приложение для Render (healthcheck)
+_http_app = FastAPI()
+
+@_http_app.get("/health")
+async def _health():
+    return {"status": "ok"}
 
 def main_keyboard() -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=[
@@ -205,7 +214,13 @@ async def main():
     logger.info("💡 Отправьте /start в боте для начала")
     
     try:
-        await dp.start_polling(bot)
+        # Параллельно поднимаем лёгкий HTTP‑сервер, чтобы Render видел открытый порт
+        port = int(os.getenv("PORT", "3001"))
+        http_server = uvicorn.Server(uvicorn.Config(app=_http_app, host="0.0.0.0", port=port, log_level="info"))
+        await asyncio.gather(
+            dp.start_polling(bot),
+            http_server.serve(),
+        )
     except Exception as e:
         logger.error(f"❌ Ошибка запуска бота: {e}")
     finally:
