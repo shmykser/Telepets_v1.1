@@ -159,7 +159,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Main content */}
       <div className="lg:pl-64">
         {/* Mobile header */}
-        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-border bg-surface px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:hidden">
+        <div className="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-border bg-surface px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:hidden" style={{ paddingTop: 'var(--tg-safe-top, 0px)' }}>
           <button
             type="button"
             className="-m-2.5 p-2.5 text-slate-400 lg:hidden"
@@ -169,7 +169,7 @@ export default function Layout({ children }: LayoutProps) {
           </button>
           <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
             <div className="flex flex-1" />
-            <div className="flex items-center gap-x-4 lg:gap-x-6">
+            <div className="flex items-center gap-x-4 lg:gap-x-6" style={{ paddingRight: 'var(--tg-safe-right, 0px)' }}>
               {showNewPetButton && (
                 <Link
                   to="/"

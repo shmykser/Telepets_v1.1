@@ -49,7 +49,11 @@ export default function AuctionCard({ auction, onAction }: { auction: Auction; o
     const list = (sellerPetsData as any)?.pets || []
     return list.find((p: any) => p.id === auction.pet_id)
   }, [sellerPetsData, auction.pet_id])
-  const imageUrl = sellerPet?.name ? `/pet-images/${auction.seller_user_id}/${encodeURIComponent(sellerPet.name)}` : undefined
+  // Абсолютный URL для изображений на домен API, чтобы не ловить 404/CORS на фронтовом домене
+  const apiBase = (import.meta as any).env?.VITE_API_URL || ''
+  const imageUrl = sellerPet?.name
+    ? `${apiBase.replace(/\/$/, '')}/pet-images/${auction.seller_user_id}/${encodeURIComponent(sellerPet.name)}`
+    : undefined
 
   return (
     <Card>
@@ -57,13 +61,24 @@ export default function AuctionCard({ auction, onAction }: { auction: Auction; o
         <CardTitle>Лот #{auction.id}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        {imageUrl ? (
-          <div className="w-full aspect-video rounded-lg overflow-hidden border border-border">
-            <img src={imageUrl} alt={sellerPet?.name || 'pet'} className="w-full h-full object-cover" />
+        <div className="w-full aspect-video rounded-lg overflow-hidden border border-border bg-slate-900/40">
+          {imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={sellerPet?.name || 'pet'}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                const el = e.target as HTMLImageElement
+                el.style.display = 'none'
+                const fb = el.parentElement?.querySelector('.fallback') as HTMLElement
+                if (fb) fb.style.display = 'flex'
+              }}
+            />
+          ) : null}
+          <div className="fallback hidden absolute inset-0 items-center justify-center text-slate-500 text-sm">
+            Изображение недоступно
           </div>
-        ) : (
-          <div className="w-full aspect-video rounded-lg bg-slate-800/50 border border-border flex items-center justify-center text-slate-500 text-sm">Изображение недоступно</div>
-        )}
+        </div>
         <div className="text-sm text-slate-400">Питомец ID: {auction.pet_id}</div>
         {auction.seller_name && (
           <div className="text-sm text-slate-400 flex items-center space-x-2">

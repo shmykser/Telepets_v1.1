@@ -33,7 +33,15 @@ export default function Market() {
             <p className="text-slate-400">Пока нет активных аукционов</p>
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {auctions.map((a: Auction) => (
+            {auctions
+              .filter((a: Auction) => {
+                // Скрываем лоты, у которых время истекло (0 секунд)
+                const raw = (a.end_time as unknown as string) || ''
+                const hasTz = /Z|[+-]\d{2}:?\d{2}$/.test(raw)
+                const end = new Date(hasTz ? raw : `${raw}Z`).getTime()
+                return end > Date.now()
+              })
+              .map((a: Auction) => (
               <AuctionCard key={a.id} auction={a} onAction={() => refetch()} />
             ))}
           </div>
