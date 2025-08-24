@@ -74,7 +74,7 @@ export default function QuickStats({
   const valueClass = (size === 'lg' ? 'text-xl' : size === 'sm' ? 'text-base' : 'text-lg') + ' font-semibold leading-none'
   const labelClass = isCompact ? 'hidden' : 'text-sm text-slate-400'
   // Всегда центрируем иконку и значение по вертикали и горизонтали
-  const rowClass = 'flex h-full flex-col items-center justify-center text-center space-y-1'
+  const rowClass = 'grid place-items-center text-center gap-1 min-h-[84px]'
 
   const renderItem = (itemKey: QuickStatItem) => {
     const wrap = (uniqueKey: string, node: JSX.Element, to?: string) => (to ? (
@@ -89,7 +89,7 @@ export default function QuickStats({
       case 'totalPets':
         return wrap('totalPets', (
           <Card className={cn('cursor-pointer hover:border-primary-500 transition-colors', itemClassName)}>
-            <CardContent className={cn(padding, contentClassName)}>
+            <CardContent className={cn('flex items-center justify-center', padding, contentClassName)}>
               <div className={rowClass}>
                 <Users className="text-sky-400" size={iconSize} />
                 <div className="space-y-0.5">
@@ -103,7 +103,7 @@ export default function QuickStats({
       case 'alivePets':
         return wrap('alivePets', (
           <Card className={cn('cursor-pointer hover:border-primary-500 transition-colors', itemClassName)}>
-            <CardContent className={cn(padding, contentClassName)}>
+            <CardContent className={cn('flex items-center justify-center', padding, contentClassName)}>
               <div className={rowClass}>
                 <Heart className="text-pink-400" size={iconSize} />
                 <div className="space-y-0.5">
@@ -117,7 +117,7 @@ export default function QuickStats({
       case 'deadPets':
         return wrap('deadPets', (
           <Card className={cn('cursor-pointer hover:border-primary-500 transition-colors', itemClassName)}>
-            <CardContent className={cn(padding, contentClassName)}>
+            <CardContent className={cn('flex items-center justify-center', padding, contentClassName)}>
               <div className={rowClass}>
                 <Skull className="text-white" size={iconSize} />
                 <div className="space-y-0.5">
@@ -131,7 +131,7 @@ export default function QuickStats({
       case 'coins':
         return wrap('coins', (
           <Card className={cn('cursor-pointer hover:border-primary-500 transition-colors', itemClassName)}>
-            <CardContent className={cn(padding, contentClassName)}>
+            <CardContent className={cn('flex items-center justify-center', padding, contentClassName)}>
               <div className={rowClass}>
                 <Coins className="text-coin" size={iconSize} />
                 <div className="space-y-0.5">
@@ -145,7 +145,7 @@ export default function QuickStats({
       case 'status':
         return (
           <Card key="status" className={cn(itemClassName)}>
-            <CardContent className={cn(padding, contentClassName)}>
+            <CardContent className={cn('flex items-center justify-center', padding, contentClassName)}>
               <div className={rowClass}>
                 <div className="w-5 h-5 rounded-full bg-primary-600" />
                 <div className="space-y-0.5">

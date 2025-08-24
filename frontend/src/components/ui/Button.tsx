@@ -15,11 +15,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={cn(
           "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           {
+            // Синяя primary кнопка
             'bg-primary-600 text-white hover:bg-primary-700': variant === 'default',
+            // Дестрактіва
             'bg-destructive text-destructive-foreground hover:bg-destructive/90': variant === 'destructive',
-            'border border-input bg-background hover:bg-accent hover:text-accent-foreground': variant === 'outline',
+            // Нейтральная с границей
+            'border border-border bg-surface text-slate-100 hover:bg-slate-700': variant === 'outline',
+            // Вторичная (нейтральная, менее акцентная)
             'bg-secondary text-secondary-foreground hover:bg-secondary/80': variant === 'secondary',
-            'hover:bg-accent hover:text-accent-foreground': variant === 'ghost',
+            // Призрачная
+            'hover:bg-surface hover:text-foreground': variant === 'ghost',
+            // Ссылка
             'text-primary underline-offset-4 hover:underline': variant === 'link',
           },
           {
