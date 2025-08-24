@@ -8,7 +8,8 @@ import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
-from aiogram.types import Message
+from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+import aiohttp
 import os
 from dotenv import load_dotenv
 
@@ -21,6 +22,7 @@ logger = logging.getLogger(__name__)
 
 # Получаем токен бота
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+API_PUBLIC_URL = os.getenv("API_PUBLIC_URL", "http://127.0.0.1:3000")
 
 if not BOT_TOKEN or BOT_TOKEN == "your_bot_token_here":
     logger.error("❌ TELEGRAM_BOT_TOKEN не установлен в .env файле!")
@@ -30,6 +32,14 @@ if not BOT_TOKEN or BOT_TOKEN == "your_bot_token_here":
 # Инициализация бота
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
+
+def main_keyboard() -> InlineKeyboardMarkup:
+    return InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text="📊 Статус", callback_data="status")],
+        [InlineKeyboardButton(text="🐾 Питомцы", callback_data="pets")],
+        [InlineKeyboardButton(text="💰 Кошелёк", callback_data="wallet")],
+    ])
+
 
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
@@ -52,7 +62,7 @@ async def cmd_start(message: Message):
 🎯 Начните игру, создав питомца!
     """
     
-    await message.answer(welcome_text, parse_mode="HTML")
+    await message.answer(welcome_text, parse_mode="HTML", reply_markup=main_keyboard())
 
 @dp.message(Command("help"))
 async def cmd_help(message: Message):
@@ -95,16 +105,89 @@ async def cmd_status(message: Message):
 
 🆔 User ID: <code>{user_id}</code>
 
-🔗 API URL: http://127.0.0.1:3000
+🔗 API URL: {API_PUBLIC_URL}
 
 📱 Для проверки питомца:
-<code>curl "http://127.0.0.1:3000/summary?user_id={user_id}"</code>
+<code>curl "{API_PUBLIC_URL}/summary?user_id={user_id}"</code>
 
 📋 Для всех питомцев:
-<code>curl "http://127.0.0.1:3000/summary/all?user_id={user_id}"</code>
+<code>curl "{API_PUBLIC_URL}/summary/all?user_id={user_id}"</code>
     """
     
-    await message.answer(status_text, parse_mode="HTML")
+    await message.answer(status_text, parse_mode="HTML", reply_markup=main_keyboard())
+
+
+async def fetch_json(session: aiohttp.ClientSession, url: str, params: dict | None = None):
+    try:
+        async with session.get(url, params=params, timeout=20) as resp:
+            return await resp.json()
+    except Exception as e:
+        logger.error(f"HTTP error: {e}")
+        return None
+
+
+@dp.callback_query()
+async def on_cb(query: CallbackQuery):
+    user_id = str(query.from_user.id)
+    data = query.data or ""
+    async with aiohttp.ClientSession() as session:
+        if data == "status":
+            url = f"{API_PUBLIC_URL}/summary"
+            js = await fetch_json(session, url, params={"user_id": user_id})
+            if not js:
+                await query.message.edit_text("⚠️ Не удалось получить статус.", reply_markup=main_keyboard())
+                return
+            status = js.get("status")
+            total = js.get("total_pets") or js.get("total_pets", 0)
+            alive = js.get("alive_pets", 0)
+            coins = (js.get("wallet") or {}).get("coins", 0)
+            txt = (
+                f"📊 <b>Статус</b>: {status}\n"
+                f"🐾 Питомцев: {total} (живых: {alive})\n"
+                f"💰 Монеты: {coins}"
+            )
+            await query.message.edit_text(txt, parse_mode="HTML", reply_markup=main_keyboard())
+            await query.answer()
+            return
+        
+        if data == "pets":
+            url = f"{API_PUBLIC_URL}/summary/all"
+            js = await fetch_json(session, url, params={"user_id": user_id})
+            if not js:
+                await query.message.edit_text("⚠️ Не удалось получить список питомцев.", reply_markup=main_keyboard())
+                return
+            pets = js.get("pets", [])
+            if not pets:
+                await query.message.edit_text("🫥 У вас пока нет питомцев.", reply_markup=main_keyboard())
+                await query.answer()
+                return
+            lines = ["🐾 <b>Ваши питомцы</b>:"]
+            for p in pets[:10]:
+                lines.append(f"• {p.get('name')} — {p.get('state')} ({p.get('health')}/100)")
+            await query.message.edit_text("\n".join(lines), parse_mode="HTML", reply_markup=main_keyboard())
+            await query.answer()
+            return
+
+        if data == "wallet":
+            url = f"{API_PUBLIC_URL}/economy/wallet/{user_id}"
+            js = await fetch_json(session, url)
+            if not js:
+                await query.message.edit_text("⚠️ Не удалось получить кошелёк.", reply_markup=main_keyboard())
+                return
+            coins = js.get("coins", 0)
+            total_earned = js.get("total_earned", 0)
+            total_spent = js.get("total_spent", 0)
+            txt = (
+                f"💰 <b>Кошелёк</b>\n"
+                f"Баланс: {coins}\n"
+                f"Заработано: {total_earned}\n"
+                f"Потрачено: {total_spent}"
+            )
+            await query.message.edit_text(txt, parse_mode="HTML", reply_markup=main_keyboard())
+            await query.answer()
+            return
+    
+    await query.answer()
 
 @dp.message()
 async def echo_message(message: Message):
