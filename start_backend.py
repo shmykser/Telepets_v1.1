@@ -26,11 +26,12 @@ if __name__ == "__main__":
     print("-" * 50)
     
     try:
+        # Запускаем как модуль пакета backend, чтобы работали относительные импорты
         uvicorn.run(
-            "main:app",
+            "backend.main:app",
             host="127.0.0.1",
             port=3000,
-            reload=True,  # Автоматическая перезагрузка при изменениях
+            reload=True,
             log_level="info"
         )
     except KeyboardInterrupt:

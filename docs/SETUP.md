@@ -29,7 +29,7 @@ alembic upgrade head
 
 ### 5. Запуск приложения (API)
 ```bash
-python -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 3000
+uvicorn backend.main:app --reload --host 127.0.0.1 --port 3000
 ```
 
 ### 6. Запуск фронтенда
@@ -66,6 +66,14 @@ curl -X POST "http://127.0.0.1:3000/economy/actions/YOUR_CHAT_ID/health_up?pet_n
 ```bash
 curl -X GET "http://127.0.0.1:3000/summary?user_id=YOUR_CHAT_ID"
 ```
+
+## 🌐 Prod (Render)
+
+- Backend (telepets-api):
+  - DATABASE_URL (Internal), RUN_MIGRATIONS_ON_STARTUP=true, SKIP_DB_ON_STARTUP=false, SECRET_KEY, PYTHON_VERSION=3.11.9
+- Frontend (telepets-frontend):
+  - VITE_API_URL=https://telepets-api.onrender.com
+- Пуш в master автоматически собирает оба сервиса
 
 ## 📱 Уведомления:
 
