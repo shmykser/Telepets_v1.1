@@ -15,6 +15,7 @@ const ComponentsDemo = lazy(() => import('./pages/Components'))
 const GamesRunner = lazy(() => import('./pages/GamesRunner'))
 const GamesPuzzle = lazy(() => import('./pages/GamesPuzzle'))
 const GamesMatch3 = lazy(() => import('./pages/GamesMatch3'))
+const GamesEgg = lazy(() => import('./pages/GamesEgg'))
 const Market = lazy(() => import('./pages/Market'))
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
             <Route path="/games/runner" element={<GamesRunner />} />
             <Route path="/games/puzzle" element={<GamesPuzzle />} />
             <Route path="/games/match3" element={<GamesMatch3 />} />
+            {/* скрытый маршрут прототипа Egg Defender */}
+            <Route path="/games/egg" element={<GamesEgg />} />
           </Routes>
         </Suspense>
       </Layout>
