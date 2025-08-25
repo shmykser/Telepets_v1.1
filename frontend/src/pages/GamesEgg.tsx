@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
 import { Button } from '@/components/ui/Button'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/Dialog'
 import { X } from 'lucide-react'
 
 export default function GamesEgg() {
@@ -62,22 +61,20 @@ export default function GamesEgg() {
             </div>
           </div>
 
-          {/* Диалог подтверждения выхода */}
-          {/* Оборачиваем в корень диалога, чтобы корректно работал state */}
-          <Dialog open={confirmExit} onOpenChange={(v) => setConfirmExit(Boolean(v))}>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Выйти из игры?</DialogTitle>
-                <DialogDescription>
-                  Прогресс прототипа не сохраняется. Подтвердить выход?
-                </DialogDescription>
-              </DialogHeader>
-              <div className="mt-4 flex gap-2 justify-end">
-                <Button variant="outline" onClick={() => setConfirmExit(false)}>Отмена</Button>
-                <Button onClick={exitGame}>Выйти</Button>
+          {/* Кастомный модальный диалог поверх всего */}
+          {confirmExit && (
+            <div className="fixed inset-0 z-[1000] flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/60" onClick={() => setConfirmExit(false)} />
+              <div className="relative z-[1001] w-[92%] max-w-sm rounded-lg border border-border bg-background p-5 shadow-xl">
+                <div className="text-lg font-semibold">Выйти из игры?</div>
+                <p className="mt-1 text-sm text-slate-400">Прогресс прототипа не сохраняется. Подтвердить выход?</p>
+                <div className="mt-4 flex gap-2 justify-end">
+                  <Button variant="outline" onClick={() => setConfirmExit(false)}>Отмена</Button>
+                  <Button onClick={exitGame}>Выйти</Button>
+                </div>
               </div>
-            </DialogContent>
-          </Dialog>
+            </div>
+          )}
         </div>
       )}
     </div>
