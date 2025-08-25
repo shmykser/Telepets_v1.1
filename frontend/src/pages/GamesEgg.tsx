@@ -63,7 +63,8 @@ export default function GamesEgg() {
           </div>
 
           {/* Диалог подтверждения выхода */}
-          <Dialog open={confirmExit} onOpenChange={setConfirmExit}>
+          {/* Оборачиваем в корень диалога, чтобы корректно работал state */}
+          <Dialog open={confirmExit} onOpenChange={(v) => setConfirmExit(Boolean(v))}>
             <DialogContent>
               <DialogHeader>
                 <DialogTitle>Выйти из игры?</DialogTitle>
